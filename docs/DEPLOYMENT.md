@@ -1,63 +1,37 @@
-# Deployment
+# Evergreen Counseling Collective Demo Deployment
 
-Bright Hope Therapy is a static Astro site deployed from [brighterpractice/bright-hope-therapy](https://github.com/brighterpractice/bright-hope-therapy) to Cloudflare Pages.
+Evergreen Counseling Collective is a fictional behavioral-health practice website used to demonstrate custom website design and management services.
 
-## Cloudflare Pages project
+The practice, clinicians, contact information, and location presented by this project are fictional.
 
-Connect the GitHub repository in **Workers & Pages → Create → Pages → Connect to Git** and use:
+## Current canonical origin
 
-- Production branch: `main`
-- Framework preset: Astro
-- Build command: `npm run build`
-- Build output directory: `dist`
-- Root directory: repository root
-- Node.js: `22.12.0` or newer, matching `package.json`
-- Environment variables: none currently required
+During development the site uses the reserved demonstration origin:
 
-Do not add the Cloudflare adapter, Pages Functions, Wrangler, or SSR for the current site. Astro produces the complete static deployment in `dist/`.
+https://evergreen-counseling-demo.example
 
-## Deployment workflow
+Before publishing the demo publicly, replace this value with the actual production domain in:
 
-Pull requests and non-production branches should receive Cloudflare preview deployments. Review the preview URL before merging. A merge to `main` triggers the production build and deployment.
+- `astro.config.mjs`
+- `src/data/site.ts`
+- `public/robots.txt`
+- `scripts/quality-check.mjs`
 
-Cloudflare Pages keeps previous deployments. If a production issue is discovered, select the last known-good production deployment in the Pages dashboard and use **Rollback to this deployment**. Follow with a source fix on `main` so the repository and live deployment remain aligned.
+Then rebuild and run the quality checks.
 
-## Custom domain and DNS
-
-Add `brighthopetherapyllc.com` under the Pages project's **Custom domains** settings and follow Cloudflare's DNS prompts. The site configuration, canonical URLs, sitemap, and robots file assume the apex domain:
-
-`https://brighthopetherapyllc.com`
-
-Choose the apex domain as the single canonical host. Configure `www.brighthopetherapyllc.com` to redirect permanently to the apex domain, and confirm Cloudflare's automatic HTTP-to-HTTPS redirect is active. Test the custom domain before announcing launch.
-
-Security and cache response headers live in `public/_headers`. After the first deployment, inspect representative HTML, `/_astro/` assets, images, `robots.txt`, and `sitemap.xml` in the browser network panel or with `curl -I` to confirm the rules are active.
-
-## Search Console
-
-1. Add a Google Search Console **Domain property** for `brighthopetherapyllc.com`.
-2. Copy the verification TXT value supplied by Google; do not create one manually.
-3. Add that TXT record in Cloudflare DNS and complete verification in Search Console.
-4. Submit `https://brighthopetherapyllc.com/sitemap.xml`.
-5. Inspect the homepage and representative service pages after deployment, then request indexing when appropriate.
-6. Confirm the apex-domain redirect, canonical URLs, and indexed host agree.
-
-DNS verification is preferred because it covers the domain and its protocol/subdomain variants without adding a verification tag to the site.
-
-## Future integrations
-
-- Appointment destination: set `appointmentExternalUrl` in `src/data/site.ts`.
-- Client Portal destination: set `clientPortalExternalUrl` in `src/data/site.ts`.
-- Analytics: retain the existing `data-track` attributes as the event vocabulary. Add a small provider integration in the shared layout only after the provider, privacy configuration, and identifier are confirmed. Never send query strings, user-entered text, or clinical information in event payloads. Update the Content Security Policy in `public/_headers` only for the exact provider origins required.
-
-External appointment and portal links intentionally open in the same tab. If that policy changes, add `rel="noopener noreferrer"` whenever `target="_blank"` is introduced.
-
-## Pre-deployment checks
+## Build
 
 Run:
 
-```bash
-npm run build
-git diff --check
-```
+    npm install
+    npm run build
 
-Confirm the 404 page, legal pages, nine service pages, sitemap, robots file, official branding, Lisa portrait, appointment fallback, and Client Portal fallback are present in `dist/`.
+The generated static site is written to:
+
+    dist/
+
+## Hosting
+
+The static output can be deployed to Cloudflare Pages or another static hosting provider.
+
+Do not configure search-engine indexing against the `.example` development address. Use the final public demo domain before submitting a sitemap or configuring Search Console.

@@ -18,3 +18,13 @@ export const externalLinkAttrs = () => ({
   target: '_blank',
   rel: 'noopener noreferrer',
 });
+
+export const site = {
+  publicUrl: 'https://evergreen-counseling-demo.example',
+  practice,
+  clinician: {
+    name: 'Maya Bennett',
+    credentials: 'LPC',
+    title: 'Licensed Professional Counselor',
+  },
+};
