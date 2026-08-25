@@ -1,0 +1,20 @@
+---
+import ApproachPage from '../../components/ApproachPage.astro';
+import { approaches, type Approach } from '../../data/approaches';
+
+export function getStaticPaths() {
+  return approaches
+    .map((approach) => ({
+      params: { slug: approach.slug },
+      props: { approach },
+    }));
+}
+
+interface Props {
+  approach: Approach;
+}
+
+const { approach } = Astro.props;
+---
+
+<ApproachPage {approach} />
