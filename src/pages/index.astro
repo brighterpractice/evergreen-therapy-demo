@@ -4,467 +4,466 @@ import Button from '../components/Button.astro';
 import { appointmentUrl } from '../data/site';
 import { homepageServices } from '../data/services';
 import {
-  organizationSchema,
-  websiteSchema,
-  pageSchema,
+ organizationSchema,
+ websiteSchema,
+ pageSchema,
 } from '../lib/schema';
 ---
 
 <Layout
-  title="Evergreen Counseling Collective | Therapy in Fort Collins, Colorado"
-  description="Individual counseling in Fort Collins, Colorado for adults navigating anxiety, burnout, relationship patterns, grief, major transitions, and difficult life experiences."
-  schema={pageSchema([organizationSchema(), websiteSchema()])}
+ title="Evergreen Counseling Collective | Therapy in Fort Collins, Colorado"
+ description="Individual counseling in Fort Collins, Colorado for adults navigating anxiety, burnout, relationship patterns, grief, major transitions, and difficult life experiences."
+ schema={pageSchema([organizationSchema, websiteSchema])}
 >
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <p class="eyebrow">
-          Evergreen Counseling Collective · Fort Collins, Colorado
-        </p>
+ <section class="hero">
+ <div class="container hero-grid">
+ <div class="hero-content">
+ <p class="eyebrow">
+ Evergreen Counseling Collective · Fort Collins, Colorado
+ </p>
 
-        <h1>
-          Compassionate support for the parts of life that feel difficult to
-          carry alone.
-        </h1>
+ <h1>
+ Compassionate support for the parts of life that feel difficult to
+ carry alone.
+ </h1>
 
-        <p class="hero-copy">
-          Individual counseling for adults navigating painful experiences,
-          difficult emotions, relationship concerns, stress, loss, or periods
-          of change.
-        </p>
-      </div>
+ <p class="hero-copy">
+ Individual counseling for adults navigating painful experiences,
+ difficult emotions, relationship concerns, stress, loss, or periods
+ of change.
+ </p>
+ </div>
 
-      <picture class="hero-portrait">
-        <source
-          srcset="/images/maya/evergreen-art-360.webp 360w, /images/maya/evergreen-art-480.webp 480w, /images/maya/evergreen-art-700.webp 700w"
-          sizes="(min-width: 48rem) 22rem, 12.5rem"
-        />
-        <img
-          src="/images/maya/evergreen-art-480.webp"
-          width="700"
-          height="780"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-          alt="Evergreen Counseling Collective"
-        />
-      </picture>
+ <picture class="hero-portrait">
+ <source
+ srcset="/images/demo/clinician-placeholder.svg"
+ sizes="(min-width: 48rem) 22rem, 12.5rem"
+ />
+ <img
+ src="/images/demo/clinician-placeholder.svg"
+ width="700"
+ height="780"
+ loading="eager"
+ fetchpriority="high"
+ decoding="async"
+ alt="Clinician photo placeholder"
+ />
+ </picture>
 
-      <div class="hero-actions">
-        <Button href={appointmentUrl} tracking="request-appointment">
-          Request an appointment
-        </Button>
-      </div>
-    </div>
-  </section>
+ <div class="hero-actions">
+ <Button href={appointmentUrl} tracking="request-appointment">
+ Request an appointment
+ </Button>
+ </div>
+ </div>
+ </section>
 
-  <section class="section hp-intro">
-    <div class="container grid grid--2 intro">
-      <p class="eyebrow">A place to begin</p>
+ <section class="section hp-intro">
+ <div class="container grid grid--2 intro">
+ <p class="eyebrow">A place to begin</p>
 
-      <div>
-        <h2>Start with what feels most important right now.</h2>
+ <div>
+ <h2>Start with what feels most important right now.</h2>
 
-        <p>
-          You may know exactly what you want help with, or you may only know
-          that something has become difficult to manage on your own. Therapy
-          can give you time to understand what is happening and decide what
-          you want to change.
-        </p>
-      </div>
-    </div>
-  </section>
+ <p>
+ You may know exactly what you want help with, or you may only know
+ that something has become difficult to manage on your own. Therapy
+ can give you time to understand what is happening and decide what
+ you want to change.
+ </p>
+ </div>
+ </div>
+ </section>
 
-  <section class="section section--tint hp-services">
-    <div class="container">
-      <p class="eyebrow">Areas of support</p>
-      <h2 class="measure">
-        People come to counseling for many different reasons.
-      </h2>
+ <section class="section section--tint hp-services">
+ <div class="container">
+ <p class="eyebrow">Areas of support</p>
+ <h2 class="measure">
+ People come to counseling for many different reasons.
+ </h2>
 
-      <div class="grid grid--3 top-space">
-        {
-          homepageServices.map((service) =>
-            service.published ? (
-              <a
-                class="card service-link"
-                href={service.href}
-                aria-label={`Learn more about ${service.title}`}
-                data-track={`service-${service.slug}`}
-              >
-                <h3>{service.title}</h3>
-                <p>{service.homeDescription}</p>
-              </a>
-            ) : (
-              <article class="card">
-                <h3>{service.title}</h3>
-                <p>{service.homeDescription}</p>
-              </article>
-            )
-          )
-        }
-      </div>
-    </div>
-  </section>
+ <div class="grid grid--3 top-space">
+ {
+ homepageServices.map((service) =>
+ service.published ? (
+ <a
+ class="card service-link"
+ href={service.href}
+ aria-label={`Learn more about ${service.title}`}
+ data-track={`service-${service.slug}`}
+ >
+ <h3>{service.title}</h3>
+ <p>{service.homeDescription}</p>
+ </a>
+ ) : (
+ <article class="card">
+ <h3>{service.title}</h3>
+ <p>{service.homeDescription}</p>
+ </article>
+ )
+ )
+ }
+ </div>
+ </div>
+ </section>
 
-  <section class="section hp-approach">
-    <div class="container grid grid--2">
-      <div>
-        <p class="eyebrow">How therapy may take shape</p>
-        <h2>Different concerns may call for different ways of working.</h2>
-      </div>
+ <section class="section hp-approach">
+ <div class="container grid grid--2">
+ <div>
+ <p class="eyebrow">How therapy may take shape</p>
+ <h2>Different concerns may call for different ways of working.</h2>
+ </div>
 
-      <div>
-        <p>
-          Maya draws from several therapeutic approaches rather than expecting
-          every client to work in the same way. The methods used in counseling
-          can change depending on what you are working on and what feels
-          helpful.
-        </p>
+ <div>
+ <p>
+ Maya draws from several therapeutic approaches rather than expecting
+ every client to work in the same way. The methods used in counseling
+ can change depending on what you are working on and what feels
+ helpful.
+ </p>
 
-        <p>
-          You do not need to choose a therapy approach before you begin.
-          Learning about them can simply help you understand some of the tools
-          Maya may use.
-        </p>
+ <p>
+ You do not need to choose a therapy approach before you begin.
+ Learning about them can simply help you understand some of the tools
+ Maya may use.
+ </p>
 
-        <div class="hp-approach-links">
-          <a
-            class="link-arrow"
-            href="/about/maya-bennett/"
-            data-track="service-selection"
-          >
-            Learn more about Lisa
-          </a>
+ <div class="hp-approach-links">
+ <a
+ class="link-arrow"
+ href="/about/maya-bennett/"
+ data-track="service-selection"
+ >
+ Learn more about Maya
+ </a>
 
-          <a class="link-arrow" href="/approaches/">
-            Explore therapy approaches
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+ <a class="link-arrow" href="/approaches/">
+ Explore therapy approaches
+ </a>
+ </div>
+ </div>
+ </div>
+ </section>
 
-  <section class="section about-band">
-    <div class="container about-band-inner">
-      <p class="eyebrow">Meet Evergreen Counseling Collective</p>
+ <section class="section about-band">
+ <div class="container about-band-inner">
+ <p class="eyebrow">Meet Evergreen Counseling Collective</p>
 
-      <h2 class="measure">
-        A counselor who values attention, honesty, and a genuine connection.
-      </h2>
+ <h2 class="measure">
+ A counselor who values attention, honesty, and a genuine connection.
+ </h2>
 
-      <p class="measure">
-        Maya is a Licensed Clinical Professional Counselor and EMDRIA
-        Certified Therapist. She works with adults in individual counseling
-        and brings clinical training together with more than 20 years of
-        experience teaching yoga and meditation.
-      </p>
+ <p class="measure">
+ Maya is a Licensed Clinical Professional Counselor and IA
+ Certified Therapist. She works with adults in individual counseling
+ and offers a thoughtful, collaborative approach tailored to each client’s goals, experiences, and needs.
+ </p>
 
-      <a class="link-arrow" href="/about/maya-bennett/">
-        Get to know Lisa
-      </a>
-    </div>
-  </section>
+ <a class="link-arrow" href="/about/maya-bennett/">
+ Get to know Maya
+ </a>
+ </div>
+ </section>
 
-  <section class="section hp-steps">
-    <div class="container">
-      <p class="eyebrow">Getting started</p>
-      <h2>Clear next steps, without pressure.</h2>
+ <section class="section hp-steps">
+ <div class="container">
+ <p class="eyebrow">Getting started</p>
+ <h2>Clear next steps, without pressure.</h2>
 
-      <ol class="steps">
-        <li>
-          <span>01</span>
-          <div>
-            <h3>Reach out</h3>
-            <p>Request an appointment or contact the practice with a question.</p>
-          </div>
-        </li>
+ <ol class="steps">
+ <li>
+ <span>01</span>
+ <div>
+ <h3>Reach out</h3>
+ <p>Request an appointment or contact the practice with a question.</p>
+ </div>
+ </li>
 
-        <li>
-          <span>02</span>
-          <div>
-            <h3>Consider fit</h3>
-            <p>
-              Determine whether Bright Hope Therapy may be a good match for
-              what you are looking for.
-            </p>
-          </div>
-        </li>
+ <li>
+ <span>02</span>
+ <div>
+ <h3>Consider fit</h3>
+ <p>
+ Determine whether Evergreen Counseling Collective may be a good match for
+ what you are looking for.
+ </p>
+ </div>
+ </li>
 
-        <li>
-          <span>03</span>
-          <div>
-            <h3>Complete information</h3>
-            <p>
-              Provide required information through the appropriate secure
-              system.
-            </p>
-          </div>
-        </li>
+ <li>
+ <span>03</span>
+ <div>
+ <h3>Complete information</h3>
+ <p>
+ Provide required information through the appropriate secure
+ system.
+ </p>
+ </div>
+ </li>
 
-        <li>
-          <span>04</span>
-          <div>
-            <h3>Begin counseling</h3>
-            <p>
-              Meet with Maya and begin with the concerns that matter most to
-              you.
-            </p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
+ <li>
+ <span>04</span>
+ <div>
+ <h3>Begin counseling</h3>
+ <p>
+ Meet with Maya and begin with the concerns that matter most to
+ you.
+ </p>
+ </div>
+ </li>
+ </ol>
+ </div>
+ </section>
 
-  <section class="section section--tint hp-location">
-    <div class="container grid grid--2">
-      <div>
-        <p class="eyebrow">Fort Collins, Colorado</p>
-        <h2>Counseling in Northern Colorado.</h2>
-      </div>
+ <section class="section section--tint hp-location">
+ <div class="container grid grid--2">
+ <div>
+ <p class="eyebrow">Fort Collins, Colorado</p>
+ <h2>Counseling in Northern Colorado.</h2>
+ </div>
 
-      <div>
-        <p>
-          Bright Hope Therapy is based in Meridian and serves people from
-          Boise, Eagle, Nampa, Kuna, Star, and nearby Treasure Valley
-          communities.
-        </p>
+ <div>
+ <p>
+ Evergreen Counseling Collective is based in Fort Collins and serves people from
+ Loveland, Windsor, Timnath, Wellington, Greeley, and nearby Northern Colorado
+ communities.
+ </p>
 
-        <a class="link-arrow" href="/contact/">
-          Contact and getting started
-        </a>
-      </div>
-    </div>
-  </section>
+ <a class="link-arrow" href="/contact/">
+ Contact and getting started
+ </a>
+ </div>
+ </div>
+ </section>
 
-  <section class="section section--dark">
-    <div class="container final">
-      <div>
-        <p class="eyebrow">A next step</p>
-        <h2>See whether Evergreen may be a good fit.</h2>
-      </div>
+ <section class="section section--dark">
+ <div class="container final">
+ <div>
+ <p class="eyebrow">A next step</p>
+ <h2>See whether Evergreen may be a good fit.</h2>
+ </div>
 
-      <Button
-        href={appointmentUrl}
-        variant="light"
-        tracking="request-appointment"
-      >
-        Request an appointment
-      </Button>
-    </div>
-  </section>
+ <Button
+ href={appointmentUrl}
+ variant="light"
+ tracking="request-appointment"
+ >
+ Request an appointment
+ </Button>
+ </div>
+ </section>
 </Layout>
 
 <style>
-  .hero{
-    overflow:hidden;
-    padding:3.5rem 0;
-    background:linear-gradient(135deg,var(--cream),#edf1ec)
-  }
+ .hero{
+ overflow:hidden;
+ padding:3.5rem 0;
+ background:linear-gradient(135deg,var(--cream),#edf1ec)
+ }
 
-  .hero-grid{
-    display:grid;
-    gap:1.5rem;
-    align-items:center
-  }
+ .hero-grid{
+ display:grid;
+ gap:1.5rem;
+ align-items:center
+ }
 
-  .hero-copy{
-    max-width:39rem;
-    margin-bottom:1.35rem;
-    font-size:var(--lg);
-    line-height:1.55
-  }
+ .hero-copy{
+ max-width:39rem;
+ margin-bottom:1.35rem;
+ font-size:var(--lg);
+ line-height:1.55
+ }
 
-  .hero-portrait{
-    display:block;
-    width:min(52vw,12.5rem);
-    aspect-ratio:35/39;
-    overflow:hidden;
-    justify-self:center;
-    border-radius:50% 50% 1rem 1rem;
-    background:#b9c9c0;
-    box-shadow:var(--shadow)
-  }
+ .hero-portrait{
+ display:block;
+ width:min(52vw,12.5rem);
+ aspect-ratio:35/39;
+ overflow:hidden;
+ justify-self:center;
+ border-radius:50% 50% 1rem 1rem;
+ background:#b9c9c0;
+ box-shadow:var(--shadow)
+ }
 
-  .hero-portrait img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center top
-  }
+ .hero-portrait img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ object-position:center top
+ }
 
-  .intro>.eyebrow{
-    padding-top:.2rem
-  }
+ .intro>.eyebrow{
+ padding-top:.2rem
+ }
 
-  .top-space{
-    margin-top:1.5rem
-  }
+ .top-space{
+ margin-top:1.5rem
+ }
 
-  .section-heading,
-  .final{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:end;
-    justify-content:space-between;
-    gap:1.15rem;
-    margin-bottom:1.5rem
-  }
+ .section-heading,
+ .final{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:end;
+ justify-content:space-between;
+ gap:1.15rem;
+ margin-bottom:1.5rem
+ }
 
-  .about-band{
-    background:#e6ece7
-  }
+ .about-band{
+ background:#e6ece7
+ }
 
-  .about-band-inner{
-    max-width:40rem;
-    margin-inline:auto;
-    text-align:center
-  }
+ .about-band-inner{
+ max-width:40rem;
+ margin-inline:auto;
+ text-align:center
+ }
 
-  .about-band-inner .link-arrow{
-    display:inline-block
-  }
+ .about-band-inner .link-arrow{
+ display:inline-block
+ }
 
-  .hp-approach-links{
-    display:grid;
-    gap:.5rem;
-    margin-top:1rem
-  }
+ .hp-approach-links{
+ display:grid;
+ gap:.5rem;
+ margin-top:1rem
+ }
 
-  .steps{
-    display:grid;
-    gap:.5rem;
-    margin:1.5rem 0 0;
-    padding:0;
-    list-style:none
-  }
+ .steps{
+ display:grid;
+ gap:.5rem;
+ margin:1.5rem 0 0;
+ padding:0;
+ list-style:none
+ }
 
-  .steps li{
-    display:flex;
-    gap:1rem;
-    padding:1.25rem 0;
-    border-top:1px solid var(--sand)
-  }
+ .steps li{
+ display:flex;
+ gap:1rem;
+ padding:1.25rem 0;
+ border-top:1px solid var(--sand)
+ }
 
-  .steps span{
-    color:var(--clay-text);
-    font-size:.8rem;
-    font-weight:800
-  }
+ .steps span{
+ color:var(--clay-text);
+ font-size:.8rem;
+ font-weight:800
+ }
 
-  .steps h3{
-    margin-bottom:.35rem
-  }
+ .steps h3{
+ margin-bottom:.35rem
+ }
 
-  .final{
-    margin-bottom:0
-  }
+ .final{
+ margin-bottom:0
+ }
 
-  .final h2{
-    max-width:20ch
-  }
+ .final h2{
+ max-width:20ch
+ }
 
-  @media(min-width:48rem){
-    .hero{
-      padding:clamp(3.5rem,8vw,6.5rem) 0
-    }
+ @media(min-width:48rem){
+ .hero{
+ padding:clamp(3.5rem,8vw,6.5rem) 0
+ }
 
-    .hero-grid{
-      grid-template-columns:1.25fr .75fr;
-      grid-template-areas:
-        "content portrait"
-        "actions portrait";
-      column-gap:3rem;
-      row-gap:1.5rem
-    }
+ .hero-grid{
+ grid-template-columns:1.25fr .75fr;
+ grid-template-areas:
+ "content portrait"
+ "actions portrait";
+ column-gap:3rem;
+ row-gap:1.5rem
+ }
 
-    .hero-copy{
-      margin-bottom:1.5rem;
-      line-height:inherit
-    }
+ .hero-copy{
+ margin-bottom:1.5rem;
+ line-height:inherit
+ }
 
-    .hero-content{
-      grid-area:content
-    }
+ .hero-content{
+ grid-area:content
+ }
 
-    .hero-actions{
-      grid-area:actions
-    }
+ .hero-actions{
+ grid-area:actions
+ }
 
-    .hero-portrait{
-      grid-area:portrait;
-      width:min(100%,22rem);
-      justify-self:end
-    }
+ .hero-portrait{
+ grid-area:portrait;
+ width:min(100%,22rem);
+ justify-self:end
+ }
 
-    .intro>.eyebrow{
-      padding-top:.4rem
-    }
+ .intro>.eyebrow{
+ padding-top:.4rem
+ }
 
-    .top-space{
-      margin-top:2rem
-    }
+ .top-space{
+ margin-top:2rem
+ }
 
-    .section-heading,
-    .final{
-      gap:1.5rem;
-      margin-bottom:2rem
-    }
+ .section-heading,
+ .final{
+ gap:1.5rem;
+ margin-bottom:2rem
+ }
 
-    .steps{
-      grid-template-columns:repeat(4,1fr);
-      gap:1rem;
-      margin-top:2rem
-    }
+ .steps{
+ grid-template-columns:repeat(4,1fr);
+ gap:1rem;
+ margin-top:2rem
+ }
 
-    .steps li{
-      display:block;
-      padding:1.5rem 0
-    }
+ .steps li{
+ display:block;
+ padding:1.5rem 0
+ }
 
-    .steps span{
-      display:block;
-      margin-bottom:1.2rem
-    }
+ .steps span{
+ display:block;
+ margin-bottom:1.2rem
+ }
 
-    .hp-intro{
-      padding-block:4rem
-    }
+ .hp-intro{
+ padding-block:4rem
+ }
 
-    .hp-intro .container{
-      grid-template-columns:1fr;
-      justify-items:center;
-      text-align:center;
-      max-width:30rem;
-      margin-inline:auto
-    }
+ .hp-intro .container{
+ grid-template-columns:1fr;
+ justify-items:center;
+ text-align:center;
+ max-width:30rem;
+ margin-inline:auto
+ }
 
-    .hp-services{
-      padding-block:5rem
-    }
+ .hp-services{
+ padding-block:5rem
+ }
 
-    .hp-approach{
-      padding-block:4.25rem
-    }
+ .hp-approach{
+ padding-block:4.25rem
+ }
 
-    .hp-approach .container{
-      grid-template-columns:1fr;
-      justify-items:center;
-      text-align:center;
-      max-width:38rem;
-      margin-inline:auto
-    }
+ .hp-approach .container{
+ grid-template-columns:1fr;
+ justify-items:center;
+ text-align:center;
+ max-width:38rem;
+ margin-inline:auto
+ }
 
-    .about-band{
-      padding-block:4.25rem
-    }
+ .about-band{
+ padding-block:4.25rem
+ }
 
-    .hp-steps{
-      padding-block:5rem
-    }
+ .hp-steps{
+ padding-block:5rem
+ }
 
-    .hp-location{
-      padding-block:4.5rem
-    }
-  }
+ .hp-location{
+ padding-block:4.5rem
+ }
+ }
 </style>

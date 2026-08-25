@@ -1,14 +1,25 @@
 import type { APIRoute } from 'astro';
-import { services } from '../data/services';
-import { approaches } from '../data/approaches';
 import { site as siteConfig } from '../data/site';
 
-const baseRoutes = [
+const routes = [
   '/',
   '/about/',
   '/about/maya-bennett/',
   '/services/',
+  '/services/individual-therapy/',
+  '/services/trauma-ptsd/',
+  '/services/anxiety-stress/',
+  '/services/grief-loss/',
+  '/services/depression-emotional-disconnection/',
+  '/services/chronic-pain-chronic-illness/',
+  '/services/life-transitions/',
+  '/services/relationship-concerns/',
+  '/services/self-esteem-personal-growth/',
   '/approaches/',
+  '/approaches/internal-family-systems/',
+  '/approaches/somatic-experiencing/',
+  '/approaches/emotionally-focused-therapy/',
+  '/approaches/mindfulness-based-therapy/',
   '/contact/',
   '/privacy/',
   '/terms/',
@@ -17,34 +28,19 @@ const baseRoutes = [
 export const GET: APIRoute = ({ site }) => {
   const base = site ?? new URL(siteConfig.publicUrl);
 
-  const routes = new Set([
-    ...baseRoutes,
-    ...services
-      .filter(
-        (service) =>
-          service.published &&
-          service.slug !== 'emdr-therapy'
-      )
-      .map((service) => service.href),
-    ...approaches.map((approach) => approach.href),
-  ]);
-
-  const urls = [...routes]
-    .map(
-      (route) =>
-        `  <url><loc>${new URL(route, base).href}</loc></url>`
-    )
+  const urls = routes
+    .map((route) => `  <url><loc>${new URL(route, base).href}</loc></url>`)
     .join('\n');
 
-  return new Response(
-    `<?xml version="1.0" encoding="UTF-8"?>\n` +
-      `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-      `${urls}\n` +
-      `</urlset>\n`,
-    {
-      headers: {
-        'Content-Type': 'application/xml; charset=utf-8',
-      },
-    }
-  );
+  const xml =
+    '<?xml version="1.0" encoding="UTF-8"?>\n' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+    urls +
+    '\n</urlset>\n';
+
+  return new Response(xml, {
+    headers: {
+      'Content-Type': 'application/xml; charset=utf-8',
+    },
+  });
 };

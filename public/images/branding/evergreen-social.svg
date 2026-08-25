@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200"
+     height="630"
+     viewBox="0 0 1200 630">
+
+  <rect width="1200" height="630" fill="#eef1ec"/>
+
+  <circle cx="250" cy="315" r="135" fill="#31584b"/>
+
+  <path
+    d="M250 200
+       L195 275
+       H220
+       L175 340
+       H220
+       V425
+       H280
+       V340
+       H325
+       L280 275
+       H305
+       Z"
+    fill="#f4f1e9"
+  />
+
+  <text
+    x="445"
+    y="285"
+    font-family="Georgia, serif"
+    font-size="76"
+    fill="#23483d">
+    Evergreen
+  </text>
+
+  <text
+    x="450"
+    y="350"
+    font-family="Arial, sans-serif"
+    font-size="28"
+    font-weight="700"
+    letter-spacing="7"
+    fill="#60736a">
+    COUNSELING COLLECTIVE
+  </text>
+
+  <text
+    x="450"
+    y="410"
+    font-family="Arial, sans-serif"
+    font-size="25"
+    fill="#60736a">
+    Fort Collins, Colorado
+  </text>
+</svg>

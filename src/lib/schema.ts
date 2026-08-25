@@ -12,7 +12,7 @@ export function organizationSchema() {
     '@type': 'Organization',
     name: site.practice.name,
     url: absoluteUrl('/'),
-    logo: absoluteUrl('/images/branding/bright-hope-mark-96.webp'),
+    logo: absoluteUrl('/images/branding/evergreen-mark.png'),
   };
 }
 

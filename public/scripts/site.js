@@ -64,3 +64,86 @@ const handleScroll = () => {
 window.addEventListener('scroll', handleScroll, { passive: true });
 appointmentControl?.addEventListener('focus', showAppointmentControl);
 mobileViewport.addEventListener('change', showAppointmentControl);
+
+/* Desktop navigation with delayed close behavior. */
+(() => {
+  const initializeDesktopDropdowns = () => {
+    const nav = document.querySelector('.desktop-nav');
+    if (!nav) return;
+
+    const dropdowns = [...nav.querySelectorAll('details')];
+    const closeTimers = new Map();
+
+    const cancelClose = (dropdown) => {
+      const timer = closeTimers.get(dropdown);
+
+      if (timer) {
+        clearTimeout(timer);
+        closeTimers.delete(dropdown);
+      }
+    };
+
+    const closeDropdown = (dropdown) => {
+      cancelClose(dropdown);
+      dropdown.open = false;
+    };
+
+    const scheduleClose = (dropdown) => {
+      cancelClose(dropdown);
+
+      const timer = setTimeout(() => {
+        dropdown.open = false;
+        closeTimers.delete(dropdown);
+      }, 350);
+
+      closeTimers.set(dropdown, timer);
+    };
+
+    const closeOthers = (current) => {
+      dropdowns.forEach((dropdown) => {
+        if (dropdown !== current) {
+          closeDropdown(dropdown);
+        }
+      });
+    };
+
+    dropdowns.forEach((dropdown) => {
+      dropdown.addEventListener('toggle', () => {
+        if (dropdown.open) {
+          cancelClose(dropdown);
+          closeOthers(dropdown);
+        }
+      });
+
+      dropdown.addEventListener('mouseenter', () => {
+        cancelClose(dropdown);
+      });
+
+      dropdown.addEventListener('mouseleave', () => {
+        scheduleClose(dropdown);
+      });
+    });
+
+    document.addEventListener('pointerdown', (event) => {
+      if (!nav.contains(event.target)) {
+        dropdowns.forEach(closeDropdown);
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        dropdowns.forEach(closeDropdown);
+      }
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener(
+      'DOMContentLoaded',
+      initializeDesktopDropdowns,
+      { once: true }
+    );
+  } else {
+    initializeDesktopDropdowns();
+  }
+})();

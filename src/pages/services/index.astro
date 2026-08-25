@@ -7,166 +7,166 @@ import { breadcrumbSchema, pageSchema } from '../../lib/schema';
 const crumbs = [{ label: 'Services' }];
 
 const publishedServices = services.filter(
-  (service) =>
-    service.published &&
-    service.slug !== 'emdr-therapy'
+ (service) =>
+ service.published &&
+ service.published
 );
 ---
 
 <Layout
-  title="Therapy Services in Meridian, Idaho"
-  description="Explore counseling for trauma, anxiety, grief, depression, chronic pain and illness, life transitions, relationships, and personal growth in Meridian, Idaho."
-  schema={pageSchema([breadcrumbSchema(crumbs, Astro.url.pathname)])}
+ title="Therapy Services in Fort Collins, Colorado"
+ description="Explore counseling for trauma, anxiety, grief, depression, chronic pain and illness, life transitions, relationships, and personal growth in Fort Collins, Colorado."
+ schema={pageSchema([breadcrumbSchema(crumbs, Astro.url.pathname)])}
 >
-  <PageHero
-    eyebrow="Individual counseling for adults"
-    title="Support for what may be bringing you to therapy."
-    intro="The concerns that lead someone to counseling do not always fit neatly into one category. These pages describe several common areas Maya works with."
-    crumbs={crumbs}
-  />
+ <PageHero
+ eyebrow="Individual counseling for adults"
+ title="Support for what may be bringing you to therapy."
+ intro="The concerns that lead someone to counseling do not always fit neatly into one category. These pages describe several common areas Maya works with."
+ crumbs={crumbs}
+ />
 
-  <section class="section">
-    <div class="container grid grid--2">
-      <div>
-        <p class="eyebrow">Individual therapy</p>
-        <h2>Begin with the concern, question, or change that matters to you.</h2>
-      </div>
+ <section class="section">
+ <div class="container grid grid--2">
+ <div>
+ <p class="eyebrow">Individual therapy</p>
+ <h2>Begin with the concern, question, or change that matters to you.</h2>
+ </div>
 
-      <div>
-        <p>
-          Some people seek counseling because of a specific experience or
-          symptom. Others notice patterns in emotions, relationships, stress,
-          or daily life that they want to understand more clearly.
-        </p>
+ <div>
+ <p>
+ Some people seek counseling because of a specific experience or
+ symptom. Others notice patterns in emotions, relationships, stress,
+ or daily life that they want to understand more clearly.
+ </p>
 
-        <p>
-          The service pages below describe common reasons adults may seek
-          support. They are not meant to require you to choose a diagnosis or
-          place yourself into one category.
-        </p>
+ <p>
+ The service pages below describe common reasons adults may seek
+ support. They are not meant to require you to choose a diagnosis or
+ place yourself into one category.
+ </p>
 
-        <a class="link-arrow" href="/services/individual-therapy/">
-          Learn more about individual therapy
-        </a>
-      </div>
-    </div>
-  </section>
+ <a class="link-arrow" href="/services/individual-therapy/">
+ Learn more about individual therapy
+ </a>
+ </div>
+ </div>
+ </section>
 
-  <section class="section section--tint" id="areas-of-support">
-    <div class="container">
-      <p class="eyebrow">Areas of support</p>
-      <h2>Explore what may be bringing you to counseling.</h2>
+ <section class="section section--tint" id="areas-of-support">
+ <div class="container">
+ <p class="eyebrow">Areas of support</p>
+ <h2>Explore what may be bringing you to counseling.</h2>
 
-      <div class="areas">
-        {
-          publishedServices.map((service) => (
-            <a
-              class="service-card service-link card"
-              href={service.href}
-              aria-label={`Learn more about ${service.title}`}
-              data-track={`service-${service.slug}`}
-            >
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </a>
-          ))
-        }
-      </div>
-    </div>
-  </section>
+ <div class="areas">
+ {
+ publishedServices.map((service) => (
+ <a
+ class="service-card service-link card"
+ href={service.href}
+ aria-label={`Learn more about ${service.title}`}
+ data-track={`service-${service.slug}`}
+ >
+ <h3>{service.title}</h3>
+ <p>{service.description}</p>
+ </a>
+ ))
+ }
+ </div>
+ </div>
+ </section>
 
-  <section class="section">
-    <div class="container grid grid--2">
-      <div>
-        <p class="eyebrow">Services and approaches</p>
-        <h2>What brings you in and how therapy works are not the same thing.</h2>
-      </div>
+ <section class="section">
+ <div class="container grid grid--2">
+ <div>
+ <p class="eyebrow">Services and approaches</p>
+ <h2>What brings you in and how therapy works are not the same thing.</h2>
+ </div>
 
-      <div>
-        <p>
-          Services describe concerns such as trauma, anxiety, grief, chronic
-          pain or illness, relationship difficulties, or life transitions.
-          Approaches describe
-          methods Maya may use during counseling, such as EMDR, IFS, somatic
-          work, EFT, or mindfulness.
-        </p>
+ <div>
+ <p>
+ Services describe concerns such as trauma, anxiety, grief, chronic
+ pain or illness, relationship difficulties, or life transitions.
+ Approaches describe
+ methods Maya may use during counseling, such as, IFS, somatic
+ work, EFT, or mindfulness.
+ </p>
 
-        <p>
-          A single concern may be explored in more than one way, and the
-          approach can change as counseling develops.
-        </p>
+ <p>
+ A single concern may be explored in more than one way, and the
+ approach can change as counseling develops.
+ </p>
 
-        <a class="link-arrow" href="/approaches/">
-          Explore therapy approaches
-        </a>
-      </div>
-    </div>
-  </section>
+ <a class="link-arrow" href="/approaches/">
+ Explore therapy approaches
+ </a>
+ </div>
+ </div>
+ </section>
 
-  <section class="section section--tint">
-    <div class="container measure">
-      <p class="eyebrow">Finding a place to begin</p>
-      <h2>You can start without having the right label.</h2>
+ <section class="section section--tint">
+ <div class="container measure">
+ <p class="eyebrow">Finding a place to begin</p>
+ <h2>You can start without having the right label.</h2>
 
-      <p>
-        Experiences often overlap. If several pages sound familiar—or none of
-        them describe your situation exactly—that does not prevent you from
-        reaching out.
-      </p>
+ <p>
+ Experiences often overlap. If several pages sound familiar—or none of
+ them describe your situation exactly—that does not prevent you from
+ reaching out.
+ </p>
 
-      <a class="link-arrow" href="/contact/">
-        Contact and getting started
-      </a>
-    </div>
-  </section>
+ <a class="link-arrow" href="/contact/">
+ Contact and getting started
+ </a>
+ </div>
+ </section>
 </Layout>
 
 <style>
-  .areas{
-    display:grid;
-    gap:.75rem;
-    margin-top:2rem
-  }
+ .areas{
+ display:grid;
+ gap:.75rem;
+ margin-top:2rem
+ }
 
-  .service-card{
-    display:block;
-    padding:1.2rem;
-    color:var(--body);
-    text-decoration:none;
-    transition:
-      transform .18s ease,
-      box-shadow .18s ease,
-      border-color .18s ease
-  }
+ .service-card{
+ display:block;
+ padding:1.2rem;
+ color:var(--body);
+ text-decoration:none;
+ transition:
+ transform .18s ease,
+ box-shadow .18s ease,
+ border-color .18s ease
+ }
 
-  .service-card h3{
-    font-family:var(--sans);
-    font-size:1rem;
-    font-weight:700
-  }
+ .service-card h3{
+ font-family:var(--sans);
+ font-size:1rem;
+ font-weight:700
+ }
 
-  .service-card p{
-    font-size:.95rem
-  }
+ .service-card p{
+ font-size:.95rem
+ }
 
-  @media(hover:hover){
-    a.service-card:hover{
-      border-color:var(--sage);
-      color:var(--body);
-      box-shadow:var(--shadow);
-      transform:translateY(-2px)
-    }
-  }
+ @media(hover:hover){
+ a.service-card:hover{
+ border-color:var(--sage);
+ color:var(--body);
+ box-shadow:var(--shadow);
+ transform:translateY(-2px)
+ }
+ }
 
-  @media(min-width:36rem){
-    .areas{
-      grid-template-columns:repeat(2,1fr)
-    }
-  }
+ @media(min-width:36rem){
+ .areas{
+ grid-template-columns:repeat(2,1fr)
+ }
+ }
 
-  @media(min-width:64rem){
-    .areas{
-      grid-template-columns:repeat(3,1fr)
-    }
-  }
+ @media(min-width:64rem){
+ .areas{
+ grid-template-columns:repeat(3,1fr)
+ }
+ }
 </style>

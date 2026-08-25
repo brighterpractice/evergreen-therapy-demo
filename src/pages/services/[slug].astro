@@ -4,7 +4,13 @@ import { services, type Service } from '../../data/services';
 import { servicePages, type ServicePageContent } from '../../data/service-pages';
 
 export function getStaticPaths() {
-  return services.filter((service) => service.published && service.slug !== 'emdr-therapy').map((service) => ({
+  return services
+    .filter((service) =>
+      service.published &&
+      typeof service.slug === 'string' &&
+      service.slug.length > 0
+    )
+    .map((service) => ({
     params: { slug: service.slug },
     props: { service, content: servicePages[service.slug] },
   }));

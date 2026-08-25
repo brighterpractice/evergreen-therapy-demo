@@ -1,6 +1,6 @@
 # Deployment
 
-Bright Hope Therapy is a static Astro site deployed from [brighterpractice/bright-hope-therapy](https://github.com/brighterpractice/bright-hope-therapy) to Cloudflare Pages.
+Evergreen Counseling Collective is a static Astro site deployed from [evergreen-counseling-demo](https://github.com/evergreen-counseling-demo) to Cloudflare Pages.
 
 ## Cloudflare Pages project
 
@@ -24,20 +24,20 @@ Cloudflare Pages keeps previous deployments. If a production issue is discovered
 
 ## Custom domain and DNS
 
-Add `brighthopetherapyllc.com` under the Pages project's **Custom domains** settings and follow Cloudflare's DNS prompts. The site configuration, canonical URLs, sitemap, and robots file assume the apex domain:
+Add `evergreen-counseling-demo.example` under the Pages project's **Custom domains** settings and follow Cloudflare's DNS prompts. The site configuration, canonical URLs, sitemap, and robots file assume the apex domain:
 
-`https://brighthopetherapyllc.com`
+`https://evergreen-counseling-demo.example`
 
-Choose the apex domain as the single canonical host. Configure `www.brighthopetherapyllc.com` to redirect permanently to the apex domain, and confirm Cloudflare's automatic HTTP-to-HTTPS redirect is active. Test the custom domain before announcing launch.
+Choose the apex domain as the single canonical host. Configure `www.evergreen-counseling-demo.example` to redirect permanently to the apex domain, and confirm Cloudflare's automatic HTTP-to-HTTPS redirect is active. Test the custom domain before announcing launch.
 
 Security and cache response headers live in `public/_headers`. After the first deployment, inspect representative HTML, `/_astro/` assets, images, `robots.txt`, and `sitemap.xml` in the browser network panel or with `curl -I` to confirm the rules are active.
 
 ## Search Console
 
-1. Add a Google Search Console **Domain property** for `brighthopetherapyllc.com`.
+1. Add a Google Search Console **Domain property** for `evergreen-counseling-demo.example`.
 2. Copy the verification TXT value supplied by Google; do not create one manually.
 3. Add that TXT record in Cloudflare DNS and complete verification in Search Console.
-4. Submit `https://brighthopetherapyllc.com/sitemap.xml`.
+4. Submit `https://evergreen-counseling-demo.example/sitemap.xml`.
 5. Inspect the homepage and representative service pages after deployment, then request indexing when appropriate.
 6. Confirm the apex-domain redirect, canonical URLs, and indexed host agree.
 
@@ -60,4 +60,4 @@ npm run build
 git diff --check
 ```
 
-Confirm the 404 page, legal pages, nine service pages, sitemap, robots file, official branding, Lisa portrait, appointment fallback, and Client Portal fallback are present in `dist/`.
+Confirm the 404 page, legal pages, nine service pages, sitemap, robots file, official branding, Maya portrait, appointment fallback, and Client Portal fallback are present in `dist/`.

@@ -15,57 +15,57 @@ const approachLinks = content.approachLinks ?? [];
 const crumbs = [{ label: 'Services', href: '/services/' }, { label: service.title }];
 ---
 <Layout title={content.title} description={content.description} schema={pageSchema([breadcrumbSchema(crumbs, Astro.url.pathname)])}>
-  <PageHero eyebrow="Therapy services" title={service.title} intro={content.hero} crumbs={crumbs} />
+ <PageHero eyebrow="Therapy services" title={service.title} intro={content.hero} crumbs={crumbs} />
 
-  <section class="section">
-    <div class="container grid grid--2 service-intro">
-      <div><p class="eyebrow">Understanding what brings you in</p><h2>{content.leadTitle}</h2></div>
-      <div>{content.lead.map((paragraph) => <p>{paragraph}</p>)}</div>
-    </div>
-  </section>
+ <section class="section">
+ <div class="container grid grid--2 service-intro">
+ <div><p class="eyebrow">Understanding what brings you in</p><h2>{content.leadTitle}</h2></div>
+ <div>{content.lead.map((paragraph) => <p>{paragraph}</p>)}</div>
+ </div>
+ </section>
 
-  <section class="section section--tint">
-    <div class="container experiences-layout">
-      <div><p class="eyebrow">Experiences and concerns</p><h2>{content.experiencesTitle}</h2>{content.experiencesIntro && <p>{content.experiencesIntro}</p>}</div>
-      <ul class="experience-list">{content.experiences.map((experience) => <li>{experience}</li>)}</ul>
-    </div>
-  </section>
+ <section class="section section--tint">
+ <div class="container experiences-layout">
+ <div><p class="eyebrow">Experiences and concerns</p><h2>{content.experiencesTitle}</h2>{content.experiencesIntro && <p>{content.experiencesIntro}</p>}</div>
+ <ul class="experience-list">{content.experiences.map((experience) => <li>{experience}</li>)}</ul>
+ </div>
+ </section>
 
-  <section class="section">
-    <div class="container grid grid--2">
-      <div><p class="eyebrow">How counseling may help</p><h2>{content.approachTitle}</h2></div>
-      <div>
-        {content.approach.map((paragraph) => <p>{paragraph}</p>)}
+ <section class="section">
+ <div class="container grid grid--2">
+ <div><p class="eyebrow">How counseling may help</p><h2>{content.approachTitle}</h2></div>
+ <div>
+ {content.approach.map((paragraph) => <p>{paragraph}</p>)}
 
-        {related && related.length > 0 &&
-          <div class="related-links">
-            {related.map((item) =>
-              <a class="link-arrow" href={item.service!.href}>{item.label}</a>
-            )}
-          </div>
-        }
+ {related && related.length > 0 &&
+ <div class="related-links">
+ {related.map((item) =>
+ <a class="link-arrow" href={item.service!.href}>{item.label}</a>
+ )}
+ </div>
+ }
 
-        {approachLinks.length > 0 &&
-          <div class="approach-links">
-            <p class="related-label">Related therapy approaches</p>
-            <div class="related-links">
-              {approachLinks.map((item) =>
-                <a class="link-arrow" href={item.href}>{item.label}</a>
-              )}
-            </div>
-          </div>
-        }
-      </div>
-    </div>
-  </section>
+ {approachLinks.length > 0 &&
+ <div class="approach-links">
+ <p class="related-label">Related therapy approaches</p>
+ <div class="related-links">
+ {approachLinks.map((item) =>
+ <a class="link-arrow" href={item.href}>{item.label}</a>
+ )}
+ </div>
+ </div>
+ }
+ </div>
+ </div>
+ </section>
 
-  {content.wholePersonTitle && content.wholePerson && <section class="section approach-note"><div class="container measure"><p class="eyebrow">A whole-person perspective</p><h2>{content.wholePersonTitle}</h2>{content.wholePerson.map((paragraph) => <p>{paragraph}</p>)}</div></section>}
+ {content.wholePersonTitle && content.wholePerson && <section class="section approach-note"><div class="container measure"><p class="eyebrow">A whole-person perspective</p><h2>{content.wholePersonTitle}</h2>{content.wholePerson.map((paragraph) => <p>{paragraph}</p>)}</div></section>}
 
-  <section class="section section--dark">
-    <div class="container next-step"><div><p class="eyebrow">A next step</p><h2>See whether Bright Hope Therapy may be a good fit.</h2><p>You do not need to have everything figured out before reaching out.</p></div><Button href={appointmentUrl} variant="light" tracking="request-appointment">Request an appointment</Button></div>
-  </section>
+ <section class="section section--dark">
+ <div class="container next-step"><div><p class="eyebrow">A next step</p><h2>See whether Evergreen Counseling Collective may be a good fit.</h2><p>You do not need to have everything figured out before reaching out.</p></div><Button href={appointmentUrl} variant="light" tracking="request-appointment">Request an appointment</Button></div>
+ </section>
 </Layout>
 
 <style>
-  .experiences-layout{display:grid;gap:1.75rem}.experience-list{display:grid;margin:0;padding:0;list-style:none;border-top:1px solid var(--sand)}.experience-list li{position:relative;padding:1rem 0 1rem 1.5rem;border-bottom:1px solid var(--sand)}.experience-list li::before{content:"";position:absolute;top:1.7rem;left:.2rem;width:.42rem;height:.42rem;border-radius:50%;background:var(--clay)}.related-links{display:flex;flex-wrap:wrap;gap:1rem 1.5rem;margin-top:1.5rem}.related-links a{display:inline-flex;min-height:44px;align-items:center}.approach-links{margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid var(--sand)}.approach-links .related-links{margin-top:.35rem}.related-label{margin:0;color:var(--muted);font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.approach-note{background:#e6ece7}.next-step{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1.5rem}.next-step h2{max-width:21ch}.next-step p:not(.eyebrow){max-width:36rem}@media(min-width:48rem){.experiences-layout{grid-template-columns:.9fr 1.1fr;gap:clamp(3rem,7vw,7rem);align-items:start}.experience-list{grid-template-columns:repeat(2,1fr)}.experience-list li:nth-child(odd){padding-right:1.5rem}.experience-list li:nth-child(even){padding-left:2.5rem}.experience-list li:nth-child(even)::before{left:1.2rem}}
+ .experiences-layout{display:grid;gap:1.75rem}.experience-list{display:grid;margin:0;padding:0;list-style:none;border-top:1px solid var(--sand)}.experience-list li{position:relative;padding:1rem 0 1rem 1.5rem;border-bottom:1px solid var(--sand)}.experience-list li::before{content:"";position:absolute;top:1.7rem;left:.2rem;width:.42rem;height:.42rem;border-radius:50%;background:var(--clay)}.related-links{display:flex;flex-wrap:wrap;gap:1rem 1.5rem;margin-top:1.5rem}.related-links a{display:inline-flex;min-height:44px;align-items:center}.approach-links{margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid var(--sand)}.approach-links .related-links{margin-top:.35rem}.related-label{margin:0;color:var(--muted);font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.approach-note{background:#e6ece7}.next-step{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1.5rem}.next-step h2{max-width:21ch}.next-step p:not(.eyebrow){max-width:36rem}@media(min-width:48rem){.experiences-layout{grid-template-columns:.9fr 1.1fr;gap:clamp(3rem,7vw,7rem);align-items:start}.experience-list{grid-template-columns:repeat(2,1fr)}.experience-list li:nth-child(odd){padding-right:1.5rem}.experience-list li:nth-child(even){padding-left:2.5rem}.experience-list li:nth-child(even)::before{left:1.2rem}}
 </style>

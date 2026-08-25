@@ -4,6 +4,10 @@ import { approaches, type Approach } from '../../data/approaches';
 
 export function getStaticPaths() {
   return approaches
+    .filter((approach) =>
+      typeof approach.slug === 'string' &&
+      approach.slug.length > 0
+    )
     .map((approach) => ({
       params: { slug: approach.slug },
       props: { approach },

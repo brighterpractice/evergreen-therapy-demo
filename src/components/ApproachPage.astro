@@ -7,175 +7,175 @@ import { appointmentUrl } from '../data/site';
 import { breadcrumbSchema, pageSchema } from '../lib/schema';
 
 interface Props {
-  approach: Approach;
+ approach: Approach;
 }
 
 const { approach } = Astro.props;
 
 const crumbs = [
-  { label: 'Approaches', href: '/approaches/' },
-  { label: approach.shortTitle },
+ { label: 'Approaches', href: '/approaches/' },
+ { label: approach.shortTitle },
 ];
 ---
 
 <Layout
-  title={approach.seoTitle ?? `${approach.title} in Meridian, Idaho`}
-  description={approach.description}
-  schema={pageSchema([breadcrumbSchema(crumbs, Astro.url.pathname)])}
+ title={approach.seoTitle ?? `${approach.title} in Fort Collins, Colorado`}
+ description={approach.description}
+ schema={pageSchema([breadcrumbSchema(crumbs, Astro.url.pathname)])}
 >
-  <PageHero
-    eyebrow="Therapy approaches"
-    title={approach.title}
-    intro={approach.hero}
-    crumbs={crumbs}
-  />
+ <PageHero
+ eyebrow="Therapy approaches"
+ title={approach.title}
+ intro={approach.hero}
+ crumbs={crumbs}
+ />
 
-  <section class="section">
-    <div class="container grid grid--2">
-      <div>
-        <p class="eyebrow">Understanding the approach</p>
-        <h2>{approach.whatItIsTitle}</h2>
-      </div>
-      <div>
-        {approach.whatItIs.map((paragraph) => <p>{paragraph}</p>)}
-      </div>
-    </div>
-  </section>
+ <section class="section">
+ <div class="container grid grid--2">
+ <div>
+ <p class="eyebrow">Understanding the approach</p>
+ <h2>{approach.whatItIsTitle}</h2>
+ </div>
+ <div>
+ {approach.whatItIs.map((paragraph) => <p>{paragraph}</p>)}
+ </div>
+ </div>
+ </section>
 
-  <section class="section section--tint">
-    <div class="container grid grid--2">
-      <div>
-        <p class="eyebrow">What the work may look like</p>
-        <h2>{approach.sessionTitle}</h2>
-      </div>
-      <div>
-        {approach.session.map((paragraph) => <p>{paragraph}</p>)}
-      </div>
-    </div>
-  </section>
+ <section class="section section--tint">
+ <div class="container grid grid--2">
+ <div>
+ <p class="eyebrow">What the work may look like</p>
+ <h2>{approach.sessionTitle}</h2>
+ </div>
+ <div>
+ {approach.session.map((paragraph) => <p>{paragraph}</p>)}
+ </div>
+ </div>
+ </section>
 
-  <section class="section">
-    <div class="container approach-considerations">
-      <div>
-        <p class="eyebrow">Individual and collaborative</p>
-        <h2>{approach.considerationsTitle}</h2>
-      </div>
+ <section class="section">
+ <div class="container approach-considerations">
+ <div>
+ <p class="eyebrow">Individual and collaborative</p>
+ <h2>{approach.considerationsTitle}</h2>
+ </div>
 
-      <ul class="consideration-list">
-        {approach.considerations.map((item) => <li>{item}</li>)}
-      </ul>
-    </div>
-  </section>
+ <ul class="consideration-list">
+ {approach.considerations.map((item) => <li>{item}</li>)}
+ </ul>
+ </div>
+ </section>
 
-  <section class="section related">
-    <div class="container">
-      <p class="eyebrow">Related information</p>
-      <h2>Continue exploring.</h2>
-      <div class="related-links">
-        {approach.related.map((item) => (
-          <a class="card service-link" href={item.href}>
-            <span>{item.label}</span>
-            <span aria-hidden="true">→</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+ <section class="section related">
+ <div class="container">
+ <p class="eyebrow">Related information</p>
+ <h2>Continue exploring.</h2>
+ <div class="related-links">
+ {approach.related.map((item) => (
+ <a class="card service-link" href={item.href}>
+ <span>{item.label}</span>
+ <span aria-hidden="true">→</span>
+ </a>
+ ))}
+ </div>
+ </div>
+ </section>
 
-  <section class="section section--dark">
-    <div class="container next-step">
-      <div>
-        <p class="eyebrow">Questions about an approach</p>
-        <h2>You can ask about any of these methods before deciding whether they interest you.</h2>
-        <p>
-          Maya can explain why she may recommend a particular approach, what
-          the process involves, and what other options may be available.
-        </p>
-      </div>
+ <section class="section section--dark">
+ <div class="container next-step">
+ <div>
+ <p class="eyebrow">Questions about an approach</p>
+ <h2>You can ask about any of these methods before deciding whether they interest you.</h2>
+ <p>
+ Maya can explain why she may recommend a particular approach, what
+ the process involves, and what other options may be available.
+ </p>
+ </div>
 
-      <Button
-        href={appointmentUrl}
-        variant="light"
-        tracking="request-appointment"
-      >
-        Request an appointment
-      </Button>
-    </div>
-  </section>
+ <Button
+ href={appointmentUrl}
+ variant="light"
+ tracking="request-appointment"
+ >
+ Request an appointment
+ </Button>
+ </div>
+ </section>
 </Layout>
 
 <style>
-  .approach-considerations{
-    display:grid;
-    gap:1.75rem
-  }
+ .approach-considerations{
+ display:grid;
+ gap:1.75rem
+ }
 
-  .consideration-list{
-    display:grid;
-    margin:0;
-    padding:0;
-    list-style:none;
-    border-top:1px solid var(--sand)
-  }
+ .consideration-list{
+ display:grid;
+ margin:0;
+ padding:0;
+ list-style:none;
+ border-top:1px solid var(--sand)
+ }
 
-  .consideration-list li{
-    position:relative;
-    padding:1rem 0 1rem 1.5rem;
-    border-bottom:1px solid var(--sand)
-  }
+ .consideration-list li{
+ position:relative;
+ padding:1rem 0 1rem 1.5rem;
+ border-bottom:1px solid var(--sand)
+ }
 
-  .consideration-list li:before{
-    content:"";
-    position:absolute;
-    top:1.7rem;
-    left:.2rem;
-    width:.42rem;
-    height:.42rem;
-    border-radius:50%;
-    background:var(--clay)
-  }
+ .consideration-list li:before{
+ content:"";
+ position:absolute;
+ top:1.7rem;
+ left:.2rem;
+ width:.42rem;
+ height:.42rem;
+ border-radius:50%;
+ background:var(--clay)
+ }
 
-  .related{
-    background:#e6ece7
-  }
+ .related{
+ background:#e6ece7
+ }
 
-  .related-links{
-    display:grid;
-    gap:.75rem;
-    margin-top:1.5rem
-  }
+ .related-links{
+ display:grid;
+ gap:.75rem;
+ margin-top:1.5rem
+ }
 
-  .related-links a{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:1rem
-  }
+ .related-links a{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:1rem
+ }
 
-  .next-step{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:end;
-    justify-content:space-between;
-    gap:1.5rem
-  }
+ .next-step{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:end;
+ justify-content:space-between;
+ gap:1.5rem
+ }
 
-  .next-step h2{
-    max-width:25ch
-  }
+ .next-step h2{
+ max-width:25ch
+ }
 
-  .next-step p:not(.eyebrow){
-    max-width:38rem
-  }
+ .next-step p:not(.eyebrow){
+ max-width:38rem
+ }
 
-  @media(min-width:48rem){
-    .approach-considerations{
-      grid-template-columns:.9fr 1.1fr;
-      gap:clamp(3rem,7vw,7rem)
-    }
+ @media(min-width:48rem){
+ .approach-considerations{
+ grid-template-columns:.9fr 1.1fr;
+ gap:clamp(3rem,7vw,7rem)
+ }
 
-    .related-links{
-      grid-template-columns:repeat(3,1fr)
-    }
-  }
+ .related-links{
+ grid-template-columns:repeat(3,1fr)
+ }
+ }
 </style>
