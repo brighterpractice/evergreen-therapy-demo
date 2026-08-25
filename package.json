@@ -1,0 +1,18 @@
+{
+  "name": "bright-hope-therapy",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/quality-check.mjs",
+    "preview": "astro preview",
+    "astro": "astro",
+    "quality": "npm run build"
+  },
+  "dependencies": {
+    "astro": "^7.2.2"
+  }
+}

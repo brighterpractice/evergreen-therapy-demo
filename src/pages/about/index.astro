@@ -1,0 +1,133 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { breadcrumbSchema, pageSchema } from '../../lib/schema';
+
+const crumbs = [{ label: 'About Bright Hope Therapy' }];
+---
+
+<Layout
+  title="About Bright Hope Therapy | Meridian, Idaho"
+  description="Learn about Bright Hope Therapy, a private counseling practice for adults in Meridian, Idaho."
+  schema={pageSchema([breadcrumbSchema(crumbs, Astro.url.pathname)])}
+>
+  <PageHero
+    eyebrow="About the practice"
+    title="A private counseling practice with room for individual attention."
+    intro="Bright Hope Therapy is Lisa Bright’s counseling practice in Meridian, Idaho, offering individual therapy for adults."
+    crumbs={crumbs}
+  />
+
+  <section class="section">
+    <div class="container grid grid--2">
+      <div>
+        <p class="eyebrow">What you can expect</p>
+        <h2>Counseling centered on the reason you came in.</h2>
+      </div>
+
+      <div>
+        <p>
+          Therapy begins with understanding what has been happening in your
+          life and what you would like to be different. Some concerns are
+          specific and easy to name. Others become clearer over time.
+        </p>
+
+        <p>
+          You and Lisa can decide together what deserves attention, what pace
+          feels manageable, and what kind of support may be useful.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container grid grid--3">
+      <article class="card">
+        <h3>Individual counseling</h3>
+        <p>
+          Bright Hope Therapy provides one-to-one counseling for adults. The
+          work stays focused on your experiences, concerns, and goals.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>A collaborative process</h3>
+        <p>
+          Therapy is something you participate in rather than something done
+          to you. Questions, preferences, uncertainty, and feedback are
+          welcome.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Respect for what matters to you</h3>
+        <p>
+          Your relationships, values, culture, beliefs, and life circumstances
+          can all be relevant to counseling without requiring you to fit a
+          particular mold.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid--2">
+      <div>
+        <p class="eyebrow">Choosing where to begin</p>
+        <h2>You do not need to know exactly what kind of therapy you need.</h2>
+      </div>
+
+      <div>
+        <p>
+          The Services section describes some of the concerns people may bring
+          to counseling. The Approaches section explains several methods Lisa
+          may use during the work.
+        </p>
+
+        <p>
+          Both are starting points. A conversation with Lisa can help you
+          determine whether Bright Hope Therapy fits what you are looking for.
+        </p>
+
+        <div class="about-links">
+          <a class="link-arrow" href="/services/">
+            Explore therapy services
+          </a>
+
+          <a class="link-arrow" href="/approaches/">
+            Explore therapy approaches
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container grid grid--2">
+      <div>
+        <p class="eyebrow">Bright Hope Therapy in Meridian</p>
+        <h2>Learn more about the counselor behind the practice.</h2>
+      </div>
+
+      <div>
+        <p>
+          Bright Hope Therapy is Lisa Bright’s private counseling practice.
+          Her education, clinical training, professional credentials, and
+          therapeutic background are described on her profile.
+        </p>
+
+        <a class="link-arrow" href="/about/lisa-bright/">
+          Meet Lisa Bright, LCPC
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .about-links{
+    display:grid;
+    gap:.5rem;
+    margin-top:1.25rem
+  }
+</style>
