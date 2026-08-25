@@ -18,7 +18,7 @@ export interface ServicePageContent {
 export const servicePages: Record<string, ServicePageContent> = {
   'individual-therapy': {
     title: 'Individual Therapy in Meridian, Idaho',
-    description: 'Individual counseling with Lisa Bright, LCPC, for adults seeking thoughtful, whole-person support in Meridian, Idaho.',
+    description: 'Individual counseling with Maya Bennett, LPC, for adults seeking thoughtful, whole-person support in Meridian, Idaho.',
     hero: 'A private space to understand what you are carrying and what you want to be different.',
     leadTitle: 'You can begin wherever you are.',
     lead: ['Some people come to therapy with a clear concern. Others simply know that something feels difficult, unsettled, or disconnected and are not yet sure how to describe it.', 'Individual therapy gives you dedicated time to look at what is happening now, understand patterns that may be involved, and consider what you would like to be different.'],
@@ -27,7 +27,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     approachTitle: 'A process built around what you want to understand or change.',
     approach: ['Lisa may draw from EMDR, Internal Family Systems concepts, somatic awareness, mindfulness, and other counseling tools depending on the focus of the work.', 'Sessions may include understanding why a response developed, recognizing what keeps it going, and exploring changes that could be useful in daily life.'],
     wholePersonTitle: 'Attention to mind and body',
-    wholePerson: ['Thoughts and emotions often have a physical dimension. Lisa may invite awareness of tension, breath, energy, or other body cues as useful information, always at a pace that respects your comfort.'],
+    wholePerson: ['Thoughts and emotions often have a physical dimension. Maya may invite awareness of tension, breath, energy, or other body cues as useful information, always at a pace that respects your comfort.'],
     related: [{ slug: 'anxiety-stress', label: 'Explore support for anxiety and stress' }],
     approachLinks: [
       { href: '/approaches/emdr/', label: 'EMDR' },
@@ -38,14 +38,14 @@ export const servicePages: Record<string, ServicePageContent> = {
   },
   'trauma-ptsd': {
     title: 'Trauma & PTSD Therapy in Meridian, Idaho',
-    description: 'Compassionate trauma and PTSD counseling with Lisa Bright, LCPC, at Bright Hope Therapy in Meridian, Idaho.',
+    description: 'Compassionate trauma and PTSD counseling with Maya Bennett, LPC, at Bright Hope Therapy in Meridian, Idaho.',
     hero: 'Support for difficult experiences and the ways they may continue to affect the present.',
     leadTitle: 'The impact of trauma can show up in many ways.',
     lead: ['After a traumatic or overwhelming experience, reactions that once helped you get through it may continue long after the immediate danger has passed. Those responses can become exhausting or interfere with everyday life.', 'Counseling can help you understand these reactions without reducing your identity to what happened. You do not have to describe every detail of a difficult experience before you are ready.'],
     experiencesTitle: 'You may be noticing',
     experiences: ['Feeling on guard, tense, or easily startled', 'Avoiding reminders, places, conversations, or emotions', 'Intrusive memories, distressing dreams, or strong reactions to reminders', 'Feeling numb, disconnected, or far away from yourself', 'Shame, self-blame, or difficulty trusting', 'Physical responses that seem hard to explain or settle'],
     approachTitle: 'Safety, trust, and pacing matter.',
-    approach: ['Early work may focus on understanding current reactions, strengthening a sense of stability, and identifying what helps you stay connected to the present.', 'Depending on the situation, Lisa may incorporate EMDR, Internal Family Systems concepts, mindfulness, or somatic awareness. The pace can be adjusted as the work develops.'],
+    approach: ['Early work may focus on understanding current reactions, strengthening a sense of stability, and identifying what helps you stay connected to the present.', 'Depending on the situation, Maya may incorporate EMDR, Internal Family Systems concepts, mindfulness, or somatic awareness. The pace can be adjusted as the work develops.'],
     related: [{ slug: 'emdr-therapy', label: 'Learn about EMDR therapy' }],
     approachLinks: [
       { href: '/approaches/emdr/', label: 'EMDR' },
@@ -56,19 +56,19 @@ export const servicePages: Record<string, ServicePageContent> = {
   },
   'emdr-therapy': {
     title: 'EMDR Therapy in Meridian, Idaho',
-    description: 'Learn about EMDR therapy with Lisa Bright, LCPC, an EMDR Certified counselor in Meridian, Idaho.',
+    description: 'Learn about EMDR therapy with Maya Bennett, LPC, an EMDR Certified counselor in Meridian, Idaho.',
     hero: 'A structured therapy approach that may be used when distressing experiences continue to feel present.',
     leadTitle: 'What is EMDR?',
     lead: ['EMDR stands for Eye Movement Desensitization and Reprocessing. It is a structured approach for working with distressing experiences and the thoughts, emotions, and body responses connected with them.', 'EMDR uses bilateral stimulation, such as guided eye movements or alternating taps, as one part of therapy. It does not require forgetting an experience, and it may not fit every person or concern.'],
     experiencesTitle: 'EMDR may be considered when someone is working with',
     experiences: ['Distressing memories or reminders', 'Trauma-related reactions that remain active in the present', 'Strong beliefs connected with a difficult experience', 'Emotional or physical responses that feel stuck', 'Experiences that are understood intellectually but still feel unresolved emotionally'],
     approachTitle: 'Preparation and readiness matter.',
-    approach: ['Lisa is EMDR Certified. Before using EMDR, she considers your history, current circumstances, support, and how manageable difficult emotions feel right now. You may spend time building understanding and helpful resources before reprocessing begins.', 'EMDR is one tool within therapy, not a quick fix. Lisa may also draw from person-centered counseling, somatic awareness, mindfulness, and Internal Family Systems concepts when helpful.'],
+    approach: ['Lisa is EMDR Certified. Before using EMDR, she considers your history, current circumstances, support, and how manageable difficult emotions feel right now. You may spend time building understanding and helpful resources before reprocessing begins.', 'EMDR is one tool within therapy, not a quick fix. Maya may also draw from person-centered counseling, somatic awareness, mindfulness, and Internal Family Systems concepts when helpful.'],
     related: [{ slug: 'trauma-ptsd', label: 'Explore trauma and PTSD support' }],
   },
   'anxiety-stress': {
     title: 'Anxiety & Stress Therapy in Meridian, Idaho',
-    description: 'Individual counseling for anxiety, worry, stress, and overwhelm with Lisa Bright, LCPC, in Meridian, Idaho.',
+    description: 'Individual counseling for anxiety, worry, stress, and overwhelm with Maya Bennett, LPC, in Meridian, Idaho.',
     hero: 'Support when worry, tension, or pressure takes up more room than you want.',
     leadTitle: 'Stress can affect both mind and body.',
     lead: ['Anxiety and stress can show up as constant mental activity, physical tension, irritability, difficulty settling, or pressure to keep everything under control. Even when life looks manageable from the outside, the effort can be exhausting.', 'Counseling can help you recognize what keeps worry or stress active and develop different ways of responding when those patterns take over.'],
@@ -99,7 +99,7 @@ export const servicePages: Record<string, ServicePageContent> = {
   },
   'depression-emotional-disconnection': {
     title: 'Depression & Disconnection | Meridian, ID',
-    description: 'Counseling for low mood, emotional disconnection, and feeling stuck with Lisa Bright, LCPC, in Meridian, Idaho.',
+    description: 'Counseling for low mood, emotional disconnection, and feeling stuck with Maya Bennett, LPC, in Meridian, Idaho.',
     hero: 'Support when it is hard to feel connected, interested, hopeful, or fully present in your life.',
     leadTitle: 'Disconnection does not always look the same.',
     lead: ['Low mood and emotional disconnection do not always feel like obvious sadness. You may notice numbness, exhaustion, less interest in things that normally matter, or a sense of simply going through the motions.', 'Counseling provides space to explore what may be contributing and what could help you feel more engaged with yourself, other people, or daily life.'],
@@ -109,7 +109,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     approach: ['Lisa may help you look at patterns connected with withdrawal, self-criticism, exhaustion, or emotional shutdown and identify manageable ways to reconnect with what matters to you.', 'Counseling may also include attention to physical cues or protective responses. The goal is not to force positive thinking, but to understand what is happening and consider realistic next steps.'],
     related: [{ slug: 'individual-therapy', label: 'Learn more about individual therapy' }],
     approachLinks: [
-      { href: '/approaches/', label: 'Explore Lisa’s therapy approaches' },
+      { href: '/approaches/', label: 'Explore Maya’s therapy approaches' },
     ],
   },
   'chronic-pain-chronic-illness': {
@@ -145,7 +145,7 @@ export const servicePages: Record<string, ServicePageContent> = {
       { slug: 'grief-loss', label: 'Explore grief and loss counseling' },
     ],
     approachLinks: [
-      { href: '/approaches/', label: 'Explore Lisa’s therapy approaches' },
+      { href: '/approaches/', label: 'Explore Maya’s therapy approaches' },
     ],
   },
 
@@ -161,22 +161,22 @@ export const servicePages: Record<string, ServicePageContent> = {
     approach: ['Therapy can help you sort through the practical and emotional effects of a transition, recognize what uncertainty brings up, and clarify what matters as you move forward.', 'The work may also consider how earlier experiences influence current choices or how uncertainty shows up physically and emotionally.'],
     related: [{ slug: 'self-esteem-personal-growth', label: 'Explore self-esteem and personal growth' }],
     approachLinks: [
-      { href: '/approaches/', label: 'Explore Lisa’s therapy approaches' },
+      { href: '/approaches/', label: 'Explore Maya’s therapy approaches' },
     ],
   },
   'relationship-concerns': {
     title: 'Relationship Concerns | Meridian, ID',
-    description: 'Individual counseling for relationship patterns, communication, boundaries, and conflict with Lisa Bright, LCPC, in Meridian, Idaho.',
+    description: 'Individual counseling for relationship patterns, communication, boundaries, and conflict with Maya Bennett, LPC, in Meridian, Idaho.',
     hero: 'Individual counseling to understand how you connect, protect yourself, communicate, and respond in relationships.',
     leadTitle: 'Relationships can bring both meaning and difficulty.',
-    lead: ['You may be struggling in a current relationship, recovering from one that ended, or noticing similar difficulties across different relationships. Individual therapy offers space to examine your own experience without another person participating.', 'This service is individual counseling related to relationships. Lisa is not offering couples therapy through this service.'],
+    lead: ['You may be struggling in a current relationship, recovering from one that ended, or noticing similar difficulties across different relationships. Individual therapy offers space to examine your own experience without another person participating.', 'This service is individual counseling related to relationships. Maya is not offering couples therapy through this service.'],
     experiencesTitle: 'Individual counseling may help you explore',
     experiences: ['Communication patterns and difficulty expressing needs', 'Boundaries, people-pleasing, or fear of disappointing others', 'Recurring conflict or feeling misunderstood', 'Trust, closeness, vulnerability, or emotional distance', 'The effects of past relationships on present connections', 'Decisions about staying, leaving, repairing, or changing a relationship'],
     approachTitle: 'Understanding patterns, needs, boundaries, and choices.',
     approach: ['Counseling may explore what happens during conflict, how you communicate needs, where boundaries become difficult, and what reactions tend to repeat across relationships.', 'The work may also examine expectations, fears, attachment needs, or past experiences that influence present relationships. Decisions about a relationship remain yours.'],
     related: [{ slug: 'self-esteem-personal-growth', label: 'Explore self-esteem and personal growth' }],
     approachLinks: [
-      { href: '/approaches/', label: 'Explore Lisa’s therapy approaches' },
+      { href: '/approaches/', label: 'Explore Maya’s therapy approaches' },
     ],
   },
   'self-esteem-personal-growth': {

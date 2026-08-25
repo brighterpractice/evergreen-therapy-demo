@@ -6,7 +6,7 @@ import { site as siteConfig } from '../data/site';
 const baseRoutes = [
   '/',
   '/about/',
-  '/about/lisa-bright/',
+  '/about/maya-bennett/',
   '/services/',
   '/approaches/',
   '/contact/',

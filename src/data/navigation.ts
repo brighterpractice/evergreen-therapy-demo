@@ -7,7 +7,7 @@ export const navigation = [
     href: '/about/',
     children: [
       { label: 'About the Practice', href: '/about/' },
-      { label: 'Lisa Bright, LCPC', href: '/about/lisa-bright/' },
+      { label: 'Maya Bennett, LPC', href: '/about/maya-bennett/' },
     ],
   },
   {

@@ -23,7 +23,7 @@ export const approaches: Approach[] = [
     shortTitle: 'EMDR',
     href: '/approaches/emdr/',
     description:
-      'Learn about EMDR therapy with Lisa Bright, LCPC, an EMDRIA Certified Therapist in Meridian, Idaho.',
+      'Learn about EMDR therapy with Maya Bennett, LPC, an EMDRIA Certified Therapist in Meridian, Idaho.',
     cardDescription:
       'A structured approach that may help some clients work with distressing experiences and the responses connected with them.',
     hero:
@@ -46,7 +46,7 @@ export const approaches: Approach[] = [
     ],
     related: [
       { label: 'Trauma & PTSD', href: '/services/trauma-ptsd/' },
-      { label: 'About Lisa', href: '/about/lisa-bright/' },
+      { label: 'About Lisa', href: '/about/maya-bennett/' },
     ],
   },
 
@@ -57,7 +57,7 @@ export const approaches: Approach[] = [
     shortTitle: 'IFS',
     href: '/approaches/internal-family-systems/',
     description:
-      'Learn how Lisa Bright may incorporate Internal Family Systems concepts into individual counseling in Meridian, Idaho.',
+      'Learn how Maya Bennett may incorporate Internal Family Systems concepts into individual counseling in Meridian, Idaho.',
     cardDescription:
       'A framework for noticing different internal parts and protective patterns with curiosity rather than judgment.',
     hero:
@@ -92,7 +92,7 @@ export const approaches: Approach[] = [
     shortTitle: 'Somatic Experiencing',
     href: '/approaches/somatic-experiencing/',
     description:
-      'Learn how Lisa Bright may incorporate Somatic Experiencing and body-informed approaches into individual counseling in Meridian, Idaho.',
+      'Learn how Maya Bennett may incorporate Somatic Experiencing and body-informed approaches into individual counseling in Meridian, Idaho.',
     cardDescription:
       'An approach that includes attention to physical sensations and body responses alongside thoughts and emotions.',
     hero:
@@ -104,7 +104,7 @@ export const approaches: Approach[] = [
     ],
     sessionTitle: 'Body awareness is introduced gently.',
     session: [
-      'When it is useful, Lisa may invite attention to physical sensations, movement, breathing, posture, or changes in the body while discussing an experience.',
+      'When it is useful, Maya may invite attention to physical sensations, movement, breathing, posture, or changes in the body while discussing an experience.',
       'Clients remain in control of the pace. Attention to body sensations can be brief, adjusted, or set aside when it does not feel useful.',
     ],
     considerationsTitle: 'The body is one source of information.',
@@ -116,7 +116,7 @@ export const approaches: Approach[] = [
     related: [
       { label: 'Trauma & PTSD', href: '/services/trauma-ptsd/' },
       { label: 'Anxiety & Stress', href: '/services/anxiety-stress/' },
-      { label: 'About Lisa', href: '/about/lisa-bright/' },
+      { label: 'About Lisa', href: '/about/maya-bennett/' },
     ],
   },
 
@@ -127,7 +127,7 @@ export const approaches: Approach[] = [
     shortTitle: 'EFT',
     href: '/approaches/emotionally-focused-therapy/',
     description:
-      'Learn how Lisa Bright may use Emotionally Focused Therapy principles in individual counseling for adults in Meridian, Idaho.',
+      'Learn how Maya Bennett may use Emotionally Focused Therapy principles in individual counseling for adults in Meridian, Idaho.',
     cardDescription:
       'An emotion- and attachment-focused approach for understanding patterns that can affect connection and relationships.',
     hero:
@@ -135,7 +135,7 @@ export const approaches: Approach[] = [
     whatItIsTitle: 'Emotions can provide useful information about connection and protection.',
     whatItIs: [
       'Emotionally Focused Therapy, or EFT, pays close attention to emotional experience and patterns involving closeness, safety, conflict, vulnerability, attachment, and connection.',
-      'At Bright Hope Therapy, Lisa uses these concepts within individual counseling. Bright Hope Therapy is not offering couples therapy through this service.',
+      'At Bright Hope Therapy, Maya uses these concepts within individual counseling. Bright Hope Therapy is not offering couples therapy through this service.',
     ],
     sessionTitle: 'The work may explore patterns beneath the surface.',
     session: [
@@ -151,7 +151,7 @@ export const approaches: Approach[] = [
     related: [
       { label: 'Relationship Concerns', href: '/services/relationship-concerns/' },
       { label: 'Individual Therapy', href: '/services/individual-therapy/' },
-      { label: 'About Lisa', href: '/about/lisa-bright/' },
+      { label: 'About Lisa', href: '/about/maya-bennett/' },
     ],
   },
 
@@ -162,7 +162,7 @@ export const approaches: Approach[] = [
     shortTitle: 'Mindfulness',
     href: '/approaches/mindfulness-based-therapy/',
     description:
-      'Learn how Lisa Bright may incorporate mindfulness, meditation experience, and body awareness into individual counseling in Meridian, Idaho.',
+      'Learn how Maya Bennett may incorporate mindfulness, meditation experience, and body awareness into individual counseling in Meridian, Idaho.',
     cardDescription:
       'Present-moment awareness practices that can support noticing thoughts, emotions, and body cues with greater clarity.',
     hero:
