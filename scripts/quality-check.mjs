@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const root = process.cwd();
 const dist = path.join(root, 'dist');
-const canonicalOrigin = 'https://evergreen-counseling-demo.example';
+const canonicalOrigin = 'https://evergreen.brightersites.app';
 
 const failures = [];
 const warnings = [];

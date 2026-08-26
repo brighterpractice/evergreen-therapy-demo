@@ -24,22 +24,22 @@ Cloudflare Pages keeps previous deployments. If a production issue is discovered
 
 ## Custom domain and DNS
 
-Add `evergreen-counseling-demo.example` under the Pages project's **Custom domains** settings and follow Cloudflare's DNS prompts. The site configuration, canonical URLs, sitemap, and robots file assume the apex domain:
+Add `evergreen.brightersites.app` under the Pages project's **Custom domains** settings and follow Cloudflare's DNS prompts. The site configuration, canonical URLs, sitemap, and robots file assume this production host:
 
-`https://evergreen-counseling-demo.example`
+`https://evergreen.brightersites.app`
 
-Choose the apex domain as the single canonical host. Configure `www.evergreen-counseling-demo.example` to redirect permanently to the apex domain, and confirm Cloudflare's automatic HTTP-to-HTTPS redirect is active. Test the custom domain before announcing launch.
+Use the configured `brightersites.app` subdomain as the single canonical host. Confirm Cloudflare's automatic HTTP-to-HTTPS redirect is active and test the custom domain before announcing launch.
 
 Security and cache response headers live in `public/_headers`. After the first deployment, inspect representative HTML, `/_astro/` assets, images, `robots.txt`, and `sitemap.xml` in the browser network panel or with `curl -I` to confirm the rules are active.
 
 ## Search Console
 
-1. Add a Google Search Console **Domain property** for `evergreen-counseling-demo.example`.
+1. Add a Google Search Console **Domain property** for `evergreen.brightersites.app`.
 2. Copy the verification TXT value supplied by Google; do not create one manually.
 3. Add that TXT record in Cloudflare DNS and complete verification in Search Console.
-4. Submit `https://evergreen-counseling-demo.example/sitemap.xml`.
+4. Submit `https://evergreen.brightersites.app/sitemap.xml`.
 5. Inspect the homepage and representative service pages after deployment, then request indexing when appropriate.
-6. Confirm the apex-domain redirect, canonical URLs, and indexed host agree.
+6. Confirm the canonical URLs, sitemap URLs, and indexed host all agree.
 
 DNS verification is preferred because it covers the domain and its protocol/subdomain variants without adding a verification tag to the site.
 

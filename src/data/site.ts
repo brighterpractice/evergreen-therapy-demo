@@ -18,7 +18,7 @@ export const externalLinkAttrs = () => ({
 });
 
 export const site = {
- publicUrl: 'https://evergreen-counseling-demo.example',
+ publicUrl: 'https://evergreen.brightersites.app',
  practice,
  clinician: {
  name: 'Maya Bennett',

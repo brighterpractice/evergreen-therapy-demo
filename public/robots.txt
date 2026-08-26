@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://evergreen-counseling-demo.example/sitemap.xml
+Sitemap: https://evergreen.brightersites.app/sitemap.xml

@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://evergreen-counseling-demo.example',
+  site: 'https://evergreen.brightersites.app',
   output: 'static',
   trailingSlash: 'always',
 });
