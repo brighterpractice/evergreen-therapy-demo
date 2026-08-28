@@ -1,35 +1,43 @@
 ---
 import Button from './Button.astro';
 import { navigation } from '../data/navigation';
-import { appointmentUrl } from '../data/site';
+import { appointmentUrl, clientPortalUrl, externalLinkAttrs } from '../data/site';
 
 const path = Astro.url.pathname;
-
-const isActive = (href: string) =>
-  href === '/'
-    ? path === '/'
-    : path === href || path.startsWith(href);
+const portalAttrs = externalLinkAttrs();
 ---
 
 <header class="site-header">
   <div class="container header-inner">
 
     <a class="brand" href="/" aria-label="Evergreen Counseling Collective home">
-      <span class="brand-mark" aria-hidden="true">E</span>
-
-      <span class="brand-text">
-        <strong>Evergreen</strong>
-        <span>Counseling Collective</span>
+      <span class="evergreen-wordmark">
+        <span class="evergreen-name">Evergreen</span>
+        <span class="evergreen-subname">Counseling Collective</span>
       </span>
     </a>
 
-    <nav class="desktop-nav" aria-label="Primary navigation">
+    <nav
+      class="desktop-nav"
+      aria-label="Primary navigation"
+      data-track="primary-navigation"
+    >
+      <a
+        href="/"
+        aria-current={path === '/' ? 'page' : undefined}
+      >
+        Home
+      </a>
+
       {
         navigation.map((item) => (
           <a
             href={item.href}
-            class:list={{ active: isActive(item.href) }}
-            aria-current={isActive(item.href) ? 'page' : undefined}
+            aria-current={
+              path === item.href || path.startsWith(item.href)
+                ? 'page'
+                : undefined
+            }
           >
             {item.label}
           </a>
@@ -37,8 +45,21 @@ const isActive = (href: string) =>
       }
     </nav>
 
-    <div class="header-actions">
-      <Button href={appointmentUrl} tracking="request-appointment">
+    <div class="actions">
+      <a
+        class="portal"
+        href={clientPortalUrl}
+        target={portalAttrs.target}
+        rel={portalAttrs.rel}
+        data-track="client-portal"
+      >
+        Client Portal
+      </a>
+
+      <Button
+        href={appointmentUrl}
+        tracking="request-appointment"
+      >
         Request appointment
       </Button>
     </div>
@@ -50,20 +71,39 @@ const isActive = (href: string) =>
         <span></span>
       </summary>
 
-      <nav aria-label="Mobile navigation">
+      <nav
+        aria-label="Mobile navigation"
+        data-track="mobile-navigation"
+      >
+        <a
+          href="/"
+          aria-current={path === '/' ? 'page' : undefined}
+        >
+          Home
+        </a>
+
         {
           navigation.map((item) => (
             <a
               href={item.href}
-              aria-current={isActive(item.href) ? 'page' : undefined}
+              aria-current={
+                path === item.href || path.startsWith(item.href)
+                  ? 'page'
+                  : undefined
+              }
             >
               {item.label}
             </a>
           ))
         }
 
-        <a class="mobile-cta" href={appointmentUrl}>
-          Request appointment
+        <a
+          href={clientPortalUrl}
+          target={portalAttrs.target}
+          rel={portalAttrs.rel}
+          data-track="client-portal"
+        >
+          Client Portal
         </a>
       </nav>
     </details>
