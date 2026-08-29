@@ -2,6 +2,7 @@
 import ServicePage from '../../components/ServicePage.astro';
 import { services, type Service } from '../../data/services';
 import { servicePages, type ServicePageContent } from '../../data/service-pages';
+import { evergreenServicePages } from '../../data/evergreen-service-pages';
 
 export function getStaticPaths() {
   return services
@@ -13,7 +14,10 @@ export function getStaticPaths() {
     )
     .map((service) => ({
       params: { slug: service.slug },
-      props: { service, content: servicePages[service.slug] },
+      props: {
+        service,
+        content: evergreenServicePages[service.slug] ?? servicePages[service.slug],
+      },
     }));
 }
 

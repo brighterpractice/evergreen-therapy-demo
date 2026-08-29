@@ -15,29 +15,29 @@ const visibleServices = services.filter((service) => service.published);
 >
  <PageHero
  eyebrow="Individual counseling for adults"
- title="Support for what may be bringing you to therapy."
- intro="You do not need to fit your experience into one category before reaching out. Evergreen offers individual counseling for a range of concerns, with two focused service pages for some of the practice’s most common areas of support."
+ title="Support for the parts of life that have been asking for attention."
+ intro="Evergreen works with adults across a range of concerns. You can begin with one clear issue, several overlapping experiences, or simply the sense that something has felt off for too long."
  crumbs={crumbs}
  />
 
  <section class="section">
  <div class="container grid grid--2">
  <div>
- <p class="eyebrow">Individual therapy</p>
- <h2>Begin with the concern, question, or change that matters to you.</h2>
+ <p class="eyebrow">A slower starting point</p>
+ <h2>You do not have to organize the whole story before you arrive.</h2>
  </div>
 
  <div>
  <p>
- Some people seek counseling because of a specific experience or
- symptom. Others notice patterns in emotions, relationships, stress,
- or daily life that they want to understand more clearly.
+ Sometimes the reason for seeking therapy is easy to name. Other times it
+ shows up as exhaustion, tension, distance, irritability, or the feeling that
+ you have been pushing through for longer than you want to.
  </p>
 
  <p>
- Evergreen provides one-to-one counseling for adults. You can begin
- with what feels most important now and decide with Maya what deserves
- more attention as therapy develops.
+ Evergreen offers individual counseling for adults and leaves room for the
+ focus of therapy to become clearer over time rather than forcing everything
+ into one category at the beginning.
  </p>
  </div>
  </div>
@@ -46,12 +46,11 @@ const visibleServices = services.filter((service) => service.published);
  <section class="section section--tint" id="areas-of-support">
  <div class="container">
  <p class="eyebrow">Areas of support</p>
- <h2>Explore what may be bringing you to counseling.</h2>
+ <h2>Notice what sounds familiar.</h2>
  <p class="areas-intro measure">
- Trauma and anxiety have dedicated pages on this starter-size practice
- site. Other concerns are still represented here so visitors can quickly
- understand the breadth of support available without navigating a large
- collection of separate pages.
+ Some concerns have more detailed information available below. Others are
+ gathered here so you can get a sense of the kinds of experiences Maya works
+ with without having to read a separate page for every possibility.
  </p>
 
  <div class="areas">
@@ -64,10 +63,10 @@ const visibleServices = services.filter((service) => service.published);
  aria-label={`Learn more about ${service.title}`}
  data-track={`service-${service.slug}`}
  >
- <span class="detail-label">Focused service page</span>
+ <span class="detail-label">Read more</span>
  <h3>{service.title}</h3>
  <p>{service.description}</p>
- <span class="link-arrow">Learn more</span>
+ <span class="link-arrow">Explore this area</span>
  </a>
  ) : (
  <article class="service-card card">
@@ -84,21 +83,21 @@ const visibleServices = services.filter((service) => service.published);
  <section class="section">
  <div class="container grid grid--2">
  <div>
- <p class="eyebrow">How therapy may take shape</p>
- <h2>Services describe what brings you in. Maya’s approach shapes how the work unfolds.</h2>
+ <p class="eyebrow">Maya’s approach</p>
+ <h2>The work can follow what becomes important as you go.</h2>
  </div>
 
  <div>
  <p>
- Depending on your goals, Maya may draw from Internal Family Systems
- concepts, somatic awareness, emotionally focused work, mindfulness,
- and person-centered counseling. Those methods are used flexibly rather
- than as separate programs you have to choose before starting therapy.
+ Maya may draw from Internal Family Systems concepts, somatic awareness,
+ emotionally focused work, mindfulness, and person-centered counseling. The
+ point is not to move through a fixed program. It is to have enough options to
+ respond thoughtfully to what shows up in the room.
  </p>
 
  <p>
- Her clinician profile explains more about how she works and what a
- collaborative counseling process can look like.
+ Her profile gives a closer look at the tone of the work and how she thinks
+ about pace, reflection, and collaboration.
  </p>
 
  <a class="link-arrow" href="/about/maya-bennett/">
@@ -110,17 +109,17 @@ const visibleServices = services.filter((service) => service.published);
 
  <section class="section section--tint">
  <div class="container measure">
- <p class="eyebrow">Finding a place to begin</p>
- <h2>You can start without having the right label.</h2>
+ <p class="eyebrow">Not sure where you fit?</p>
+ <h2>That uncertainty can be part of the first conversation.</h2>
 
  <p>
- Experiences often overlap. If several areas sound familiar—or none of
- them describe your situation exactly—that does not prevent you from
- reaching out.
+ You are welcome to reach out even if several areas sound familiar, none of
+ them feels quite right, or you are still trying to make sense of what has
+ been going on.
  </p>
 
  <a class="link-arrow" href="/contact/">
- Contact and getting started
+ Contact Evergreen
  </a>
  </div>
  </section>
