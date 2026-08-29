@@ -1,7 +1,143 @@
 ---
-import Layout from '../layouts/Layout.astro'; import PageHero from '../components/PageHero.astro'; import Button from '../components/Button.astro'; import {appointmentUrl,clientPortalUrl,externalLinkAttrs} from '../data/site'; import {breadcrumbSchema,pageSchema} from '../lib/schema';
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import Button from '../components/Button.astro';
+import {
+  appointmentUrl,
+  clientPortalUrl,
+  externalLinkAttrs,
+} from '../data/site';
+import { breadcrumbSchema, pageSchema } from '../lib/schema';
+
 const portalAttrs = externalLinkAttrs();
-const crumbs = [{label:'Contact'}];
+const crumbs = [{ label: 'Contact' }];
 ---
-<Layout title="Contact Evergreen Counseling Collective | Fort Collins, Colorado" description="Request an individual counseling appointment with Maya Bennett, LPC, at Evergreen Counseling Collective in Fort Collins, Colorado." schema={pageSchema([breadcrumbSchema(crumbs,Astro.url.pathname)])}><PageHero eyebrow="Contact and getting started" title="Take the first step when you are ready." intro="If you are interested in individual counseling with Maya Bennett, LPC, use the Request Appointment option to begin." crumbs={crumbs}/><section class="section" id="new-clients"><div class="container contact-grid"><div><p class="eyebrow">New clients</p><h2>Begin with an appointment request.</h2><p>Use the Request Appointment option to get started. Information needed for counseling will be collected through the appropriate secure system.</p><p>Please do not send diagnoses, medication information, trauma history, insurance identifiers, or other sensitive clinical details through ordinary contact methods.</p><p class="safety-note">Do not use this website or an appointment request for emergencies or urgent support. If there is immediate danger, contact local emergency services.</p><Button href={appointmentUrl} tracking="request-appointment">Request an appointment</Button></div><aside class="card" id="contact-details"><h2>Evergreen Counseling Collective</h2><dl><div><dt>Location</dt><dd>Fort Collins, Colorado</dd></div><div><dt>Existing clients</dt><dd><a href={clientPortalUrl} target={portalAttrs.target} rel={portalAttrs.rel} data-track="client-portal">Open Client Portal</a></dd></div></dl></aside></div></section><section class="section" id="faq"><div class="container measure"><p class="eyebrow">Questions before getting started</p><h2>A few helpful details</h2><details><summary>Where is Evergreen Counseling Collective located?</summary><p>Evergreen Counseling Collective is based in Fort Collins, Colorado.</p></details><details><summary>What kind of counseling is available?</summary><p>Maya provides individual therapy for adults. The <a href="/services/">services overview</a> describes current areas of support.</p></details><details><summary>Where can I learn more about Maya?</summary><p>Read about <a href="/about/maya-bennett/">Maya’s background and approach to counseling</a>.</p></details></div></section></Layout>
-<style>.contact-grid{display:grid;gap:2rem}.contact-grid dl{margin:0}.contact-grid dl div{padding:1rem 0;border-top:1px solid var(--sand)}.safety-note{padding-left:1rem;border-left:3px solid var(--clay);font-size:.92rem}dt{color:var(--muted);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}dd{margin:.2rem 0 0;color:var(--ink)}details{padding:1.25rem 0;border-top:1px solid var(--sand)}summary{cursor:pointer;color:var(--ink);font-weight:750}details p{padding-top:1rem}@media(min-width:48rem){.contact-grid{grid-template-columns:1.2fr .8fr;align-items:start}}</style>
+
+<Layout
+  title="Contact Evergreen Counseling Collective | Fort Collins, Colorado"
+  description="Contact Evergreen Counseling Collective in Fort Collins, Colorado, to request individual counseling with Maya Bennett, LPC."
+  schema={pageSchema([breadcrumbSchema(crumbs, Astro.url.pathname)])}
+>
+  <PageHero
+    eyebrow="Contact Evergreen"
+    title="Reach out when you would like to see whether the practice feels right."
+    intro="You do not need to explain everything before making contact. An appointment request is enough to begin."
+    crumbs={crumbs}
+  />
+
+  <section class="section" id="new-clients">
+    <div class="container contact-grid">
+      <div>
+        <p class="eyebrow">Starting counseling</p>
+        <h2>A simple first step.</h2>
+        <p>
+          Send an appointment request when you are ready. The practice can use
+          that first connection to handle availability and the practical details
+          needed to move forward.
+        </p>
+        <p>
+          Keep sensitive clinical information out of ordinary email or general
+          website messages. Information needed for care should be provided
+          through the appropriate secure system.
+        </p>
+        <p class="safety-note">
+          Evergreen is not an emergency service. If you or someone else is in
+          immediate danger, contact local emergency services or an appropriate
+          crisis resource.
+        </p>
+        <Button href={appointmentUrl} tracking="request-appointment">
+          Request an appointment
+        </Button>
+      </div>
+
+      <aside class="card" id="contact-details">
+        <p class="eyebrow">Practice details</p>
+        <h2>Evergreen Counseling Collective</h2>
+        <dl>
+          <div>
+            <dt>Based in</dt>
+            <dd>Fort Collins, Colorado</dd>
+          </div>
+          <div>
+            <dt>Current clients</dt>
+            <dd>
+              <a
+                href={clientPortalUrl}
+                target={portalAttrs.target}
+                rel={portalAttrs.rel}
+                data-track="client-portal"
+              >
+                Open Client Portal
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container measure">
+      <p class="eyebrow">Before you reach out</p>
+      <h2>You are welcome to look around first.</h2>
+      <p>
+        If you want a little more context, read about Maya’s style or review the
+        areas Evergreen commonly supports. Neither page requires you to decide
+        exactly what kind of therapy you need.
+      </p>
+      <div class="contact-links">
+        <a class="link-arrow" href="/about/maya-bennett/">Meet Maya</a>
+        <a class="link-arrow" href="/services/">Explore services</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contact-grid{
+    display:grid;
+    gap:2rem
+  }
+
+  .contact-grid dl{
+    margin:0
+  }
+
+  .contact-grid dl div{
+    padding:1rem 0;
+    border-top:1px solid var(--sand)
+  }
+
+  .safety-note{
+    padding-left:1rem;
+    border-left:3px solid var(--clay);
+    font-size:.92rem
+  }
+
+  dt{
+    color:var(--muted);
+    font-size:.75rem;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase
+  }
+
+  dd{
+    margin:.2rem 0 0;
+    color:var(--ink)
+  }
+
+  .contact-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.75rem 1.5rem;
+    margin-top:1.25rem
+  }
+
+  @media(min-width:48rem){
+    .contact-grid{
+      grid-template-columns:1.2fr .8fr;
+      align-items:start
+    }
+  }
+</style>
