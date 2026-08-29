@@ -73,6 +73,37 @@ import {
  </div>
  </section>
 
+ <section class="section video-intro-section" aria-labelledby="video-intro-heading">
+ <div class="container video-intro-grid">
+ <div class="video-intro-copy">
+ <p class="eyebrow">Video introduction example</p>
+ <h2 id="video-intro-heading">A short hello can make reaching out feel easier.</h2>
+ <p>
+ A practice can place a welcome, introduction, or educational YouTube video
+ directly on the website so visitors can watch without leaving the page.
+ </p>
+ <p class="video-demo-note">
+ This demo player uses YouTube’s privacy-enhanced embed domain and loads lazily.
+ A client site would use the practice’s own YouTube video.
+ </p>
+ </div>
+
+ <div class="video-frame-shell">
+ <div class="video-frame">
+ <iframe
+ src="https://www.youtube-nocookie.com/embed/M7lc1UVf-VE?rel=0"
+ title="YouTube video embed demonstration"
+ loading="lazy"
+ referrerpolicy="strict-origin-when-cross-origin"
+ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+ allowfullscreen
+ ></iframe>
+ </div>
+ <p class="video-caption">Example embedded YouTube player</p>
+ </div>
+ </div>
+ </section>
+
  <section class="section section--tint hp-services">
  <div class="container">
  <p class="eyebrow">Areas of support</p>
@@ -290,6 +321,61 @@ import {
  padding-top:.2rem
  }
 
+ .video-intro-section{
+ border-block:1px solid rgba(41,72,63,.08);
+ background:#f7f4ec
+ }
+
+ .video-intro-grid{
+ display:grid;
+ gap:2rem;
+ align-items:center
+ }
+
+ .video-intro-copy{
+ max-width:34rem
+ }
+
+ .video-demo-note,
+ .video-caption{
+ color:#66766f;
+ font-size:.88rem
+ }
+
+ .video-demo-note{
+ margin-top:1rem
+ }
+
+ .video-frame-shell{
+ width:100%;
+ max-width:42rem;
+ justify-self:center
+ }
+
+ .video-frame{
+ position:relative;
+ width:100%;
+ aspect-ratio:16/9;
+ overflow:hidden;
+ border:1px solid rgba(41,72,63,.12);
+ border-radius:1.2rem;
+ background:#203f38;
+ box-shadow:var(--shadow)
+ }
+
+ .video-frame iframe{
+ position:absolute;
+ inset:0;
+ width:100%;
+ height:100%;
+ border:0
+ }
+
+ .video-caption{
+ margin:.7rem 0 0;
+ text-align:center
+ }
+
  .top-space{
  margin-top:1.5rem
  }
@@ -399,6 +485,11 @@ import {
  padding-top:.4rem
  }
 
+ .video-intro-grid{
+ grid-template-columns:.8fr 1.2fr;
+ gap:3rem
+ }
+
  .top-space{
  margin-top:2rem
  }
@@ -427,6 +518,10 @@ import {
 
  .hp-intro{
  padding-block:4rem
+ }
+
+ .video-intro-section{
+ padding-block:4.75rem
  }
 
  .hp-intro .container{
