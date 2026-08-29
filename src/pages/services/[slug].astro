@@ -7,13 +7,14 @@ export function getStaticPaths() {
   return services
     .filter((service) =>
       service.published &&
+      service.hasDetailPage &&
       typeof service.slug === 'string' &&
       service.slug.length > 0
     )
     .map((service) => ({
-    params: { slug: service.slug },
-    props: { service, content: servicePages[service.slug] },
-  }));
+      params: { slug: service.slug },
+      props: { service, content: servicePages[service.slug] },
+    }));
 }
 
 interface Props { service: Service; content: ServicePageContent }
