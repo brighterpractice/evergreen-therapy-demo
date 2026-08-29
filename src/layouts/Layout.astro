@@ -25,6 +25,9 @@ const pageTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
 const base = Astro.site ?? Astro.url.origin;
 const canonical = new URL(Astro.url.pathname, base);
 const socialImage = new URL(image, base);
+const analyticsSiteKey = import.meta.env.PUBLIC_BS_ANALYTICS_SITE_KEY ?? '';
+const analyticsCollector = import.meta.env.PUBLIC_BS_ANALYTICS_COLLECTOR ?? 'https://analytics.brightersites.app/api/analytics/events';
+const analyticsEnabled = /^bs_live_[0-9a-f]{32,56}$/.test(analyticsSiteKey);
 ---
 <!doctype html>
 <html lang="en">
@@ -61,6 +64,8 @@ const socialImage = new URL(image, base);
  <Footer />
  <Button id="mobile-appointment" href={appointmentUrl} tracking="request-appointment">Request appointment</Button>
  <script is:inline src="/scripts/site.js?v=6"></script>
- <script is:inline src="/scripts/brighter-analytics.js?v=5"></script>
+ {analyticsEnabled && (
+  <script is:inline src="/scripts/brighter-analytics.js?v=6" data-site-key={analyticsSiteKey} data-collector={analyticsCollector}></script>
+ )}
  </body>
 </html>
