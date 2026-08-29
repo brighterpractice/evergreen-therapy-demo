@@ -10,8 +10,12 @@ import { breadcrumbSchema, pageSchema } from '../lib/schema';
 
 interface Props { service: Service; content: ServicePageContent }
 const { service, content } = Astro.props;
-const related = content.related?.map((item) => ({ ...item, service: services.find((candidate) => candidate.slug === item.slug) })).filter((item) => item.service?.published);
-const approachLinks = content.approachLinks ?? [];
+const related = content.related
+  ?.map((item) => ({
+    ...item,
+    service: services.find((candidate) => candidate.slug === item.slug),
+  }))
+  .filter((item) => item.service?.published && item.service?.hasDetailPage);
 const crumbs = [{ label: 'Services', href: '/services/' }, { label: service.title }];
 ---
 <Layout title={content.title} description={content.description} schema={pageSchema([breadcrumbSchema(crumbs, Astro.url.pathname)])}>
@@ -44,17 +48,6 @@ const crumbs = [{ label: 'Services', href: '/services/' }, { label: service.titl
  )}
  </div>
  }
-
- {approachLinks.length > 0 &&
- <div class="approach-links">
- <p class="related-label">Related therapy approaches</p>
- <div class="related-links">
- {approachLinks.map((item) =>
- <a class="link-arrow" href={item.href}>{item.label}</a>
- )}
- </div>
- </div>
- }
  </div>
  </div>
  </section>
@@ -67,5 +60,5 @@ const crumbs = [{ label: 'Services', href: '/services/' }, { label: service.titl
 </Layout>
 
 <style>
- .experiences-layout{display:grid;gap:1.75rem}.experience-list{display:grid;margin:0;padding:0;list-style:none;border-top:1px solid var(--sand)}.experience-list li{position:relative;padding:1rem 0 1rem 1.5rem;border-bottom:1px solid var(--sand)}.experience-list li::before{content:"";position:absolute;top:1.7rem;left:.2rem;width:.42rem;height:.42rem;border-radius:50%;background:var(--clay)}.related-links{display:flex;flex-wrap:wrap;gap:1rem 1.5rem;margin-top:1.5rem}.related-links a{display:inline-flex;min-height:44px;align-items:center}.approach-links{margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid var(--sand)}.approach-links .related-links{margin-top:.35rem}.related-label{margin:0;color:var(--muted);font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.approach-note{background:#e6ece7}.next-step{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1.5rem}.next-step h2{max-width:21ch}.next-step p:not(.eyebrow){max-width:36rem}@media(min-width:48rem){.experiences-layout{grid-template-columns:.9fr 1.1fr;gap:clamp(3rem,7vw,7rem);align-items:start}.experience-list{grid-template-columns:repeat(2,1fr)}.experience-list li:nth-child(odd){padding-right:1.5rem}.experience-list li:nth-child(even){padding-left:2.5rem}.experience-list li:nth-child(even)::before{left:1.2rem}}
+ .experiences-layout{display:grid;gap:1.75rem}.experience-list{display:grid;margin:0;padding:0;list-style:none;border-top:1px solid var(--sand)}.experience-list li{position:relative;padding:1rem 0 1rem 1.5rem;border-bottom:1px solid var(--sand)}.experience-list li::before{content:"";position:absolute;top:1.7rem;left:.2rem;width:.42rem;height:.42rem;border-radius:50%;background:var(--clay)}.related-links{display:flex;flex-wrap:wrap;gap:1rem 1.5rem;margin-top:1.5rem}.related-links a{display:inline-flex;min-height:44px;align-items:center}.approach-note{background:#e6ece7}.next-step{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1.5rem}.next-step h2{max-width:21ch}.next-step p:not(.eyebrow){max-width:36rem}@media(min-width:48rem){.experiences-layout{grid-template-columns:.9fr 1.1fr;gap:clamp(3rem,7vw,7rem);align-items:start}.experience-list{grid-template-columns:repeat(2,1fr)}.experience-list li:nth-child(odd){padding-right:1.5rem}.experience-list li:nth-child(even){padding-left:2.5rem}.experience-list li:nth-child(even)::before{left:1.2rem}}
 </style>
