@@ -5,12 +5,7 @@ import { services } from '../../data/services';
 import { breadcrumbSchema, pageSchema } from '../../lib/schema';
 
 const crumbs = [{ label: 'Services' }];
-
-const publishedServices = services.filter(
- (service) =>
- service.published &&
- service.published
-);
+const visibleServices = services.filter((service) => service.published);
 ---
 
 <Layout
@@ -21,7 +16,7 @@ const publishedServices = services.filter(
  <PageHero
  eyebrow="Individual counseling for adults"
  title="Support for what may be bringing you to therapy."
- intro="The concerns that lead someone to counseling do not always fit neatly into one category. These pages describe several common areas Maya works with."
+ intro="You do not need to fit your experience into one category before reaching out. Evergreen offers individual counseling for a range of concerns, with two focused service pages for some of the practice’s most common areas of support."
  crumbs={crumbs}
  />
 
@@ -40,14 +35,10 @@ const publishedServices = services.filter(
  </p>
 
  <p>
- The service pages below describe common reasons adults may seek
- support. They are not meant to require you to choose a diagnosis or
- place yourself into one category.
+ Evergreen provides one-to-one counseling for adults. You can begin
+ with what feels most important now and decide with Maya what deserves
+ more attention as therapy develops.
  </p>
-
- <a class="link-arrow" href="/services/individual-therapy/">
- Learn more about individual therapy
- </a>
  </div>
  </div>
  </section>
@@ -56,20 +47,35 @@ const publishedServices = services.filter(
  <div class="container">
  <p class="eyebrow">Areas of support</p>
  <h2>Explore what may be bringing you to counseling.</h2>
+ <p class="areas-intro measure">
+ Trauma and anxiety have dedicated pages on this starter-size practice
+ site. Other concerns are still represented here so visitors can quickly
+ understand the breadth of support available without navigating a large
+ collection of separate pages.
+ </p>
 
  <div class="areas">
  {
- publishedServices.map((service) => (
+ visibleServices.map((service) =>
+ service.hasDetailPage ? (
  <a
  class="service-card service-link card"
  href={service.href}
  aria-label={`Learn more about ${service.title}`}
  data-track={`service-${service.slug}`}
  >
+ <span class="detail-label">Focused service page</span>
  <h3>{service.title}</h3>
  <p>{service.description}</p>
+ <span class="link-arrow">Learn more</span>
  </a>
- ))
+ ) : (
+ <article class="service-card card">
+ <h3>{service.title}</h3>
+ <p>{service.description}</p>
+ </article>
+ )
+ )
  }
  </div>
  </div>
@@ -78,26 +84,25 @@ const publishedServices = services.filter(
  <section class="section">
  <div class="container grid grid--2">
  <div>
- <p class="eyebrow">Services and approaches</p>
- <h2>What brings you in and how therapy works are not the same thing.</h2>
+ <p class="eyebrow">How therapy may take shape</p>
+ <h2>Services describe what brings you in. Maya’s approach shapes how the work unfolds.</h2>
  </div>
 
  <div>
  <p>
- Services describe concerns such as trauma, anxiety, grief, chronic
- pain or illness, relationship difficulties, or life transitions.
- Approaches describe
- methods Maya may use during counseling, such as, IFS, somatic
- work, EFT, or mindfulness.
+ Depending on your goals, Maya may draw from Internal Family Systems
+ concepts, somatic awareness, emotionally focused work, mindfulness,
+ and person-centered counseling. Those methods are used flexibly rather
+ than as separate programs you have to choose before starting therapy.
  </p>
 
  <p>
- A single concern may be explored in more than one way, and the
- approach can change as counseling develops.
+ Her clinician profile explains more about how she works and what a
+ collaborative counseling process can look like.
  </p>
 
- <a class="link-arrow" href="/approaches/">
- Explore therapy approaches
+ <a class="link-arrow" href="/about/maya-bennett/">
+ Learn more about Maya’s approach
  </a>
  </div>
  </div>
@@ -109,7 +114,7 @@ const publishedServices = services.filter(
  <h2>You can start without having the right label.</h2>
 
  <p>
- Experiences often overlap. If several pages sound familiar—or none of
+ Experiences often overlap. If several areas sound familiar—or none of
  them describe your situation exactly—that does not prevent you from
  reaching out.
  </p>
@@ -122,6 +127,10 @@ const publishedServices = services.filter(
 </Layout>
 
 <style>
+ .areas-intro{
+ margin-top:1rem
+ }
+
  .areas{
  display:grid;
  gap:.75rem;
@@ -147,6 +156,21 @@ const publishedServices = services.filter(
 
  .service-card p{
  font-size:.95rem
+ }
+
+ .detail-label{
+ display:block;
+ margin-bottom:.55rem;
+ color:var(--clay-text);
+ font-size:.68rem;
+ font-weight:800;
+ letter-spacing:.08em;
+ text-transform:uppercase
+ }
+
+ .service-card .link-arrow{
+ display:inline-flex;
+ margin-top:.75rem
  }
 
  @media(hover:hover){
