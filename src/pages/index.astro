@@ -85,7 +85,7 @@ import {
  <div class="grid grid--3 top-space">
  {
  homepageServices.map((service) =>
- service.published ? (
+ service.hasDetailPage ? (
  <a
  class="card service-link"
  href={service.href}
@@ -104,6 +104,10 @@ import {
  )
  }
  </div>
+
+ <a class="link-arrow hp-services-link" href="/services/">
+ Explore all services
+ </a>
  </div>
  </section>
 
@@ -123,9 +127,9 @@ import {
  </p>
 
  <p>
- You do not need to choose a therapy approach before you begin.
- Learning about them can simply help you understand some of the tools
- Maya may use.
+ You do not need to choose a therapy approach before you begin. Maya’s
+ profile explains how she combines relational, body-aware, mindfulness,
+ and other counseling tools within an individual process.
  </p>
 
  <div class="hp-approach-links">
@@ -134,11 +138,7 @@ import {
  href="/about/maya-bennett/"
  data-track="service-selection"
  >
- Learn more about Maya
- </a>
-
- <a class="link-arrow" href="/approaches/">
- Explore therapy approaches
+ Learn more about Maya’s approach
  </a>
  </div>
  </div>
@@ -154,9 +154,9 @@ import {
  </h2>
 
  <p class="measure">
- Maya is a Licensed Clinical Professional Counselor and IA
- Certified Therapist. She works with adults in individual counseling
- and offers a thoughtful, collaborative approach tailored to each client’s goals, experiences, and needs.
+ Maya is a Licensed Professional Counselor who works with adults in
+ individual counseling and offers a thoughtful, collaborative approach
+ tailored to each client’s goals, experiences, and needs.
  </p>
 
  <a class="link-arrow" href="/about/maya-bennett/">
@@ -297,6 +297,11 @@ import {
  }
 
  .top-space{
+ margin-top:1.5rem
+ }
+
+ .hp-services-link{
+ display:inline-flex;
  margin-top:1.5rem
  }
 
