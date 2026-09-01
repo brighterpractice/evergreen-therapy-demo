@@ -28,7 +28,7 @@ const socialImage = new URL(image, base);
 const analyticsConfig = JSON.stringify({
   collectorUrl: 'https://analytics.brightersites.app',
   siteKey: 'bs_live_73c0a61bca3fff9672f3c0ad87307b26afad5732401f6c48',
-  scriptVersion: '1.0.2',
+  scriptVersion: '2.0.0',
 });
 ---
 <!doctype html>
@@ -67,6 +67,6 @@ const analyticsConfig = JSON.stringify({
  <Button id="mobile-appointment" href={appointmentUrl} tracking="request-appointment">Request appointment</Button>
  <script is:inline src="/scripts/site.js?v=6"></script>
  <script is:inline type="application/json" data-bs-analytics-config set:html={analyticsConfig}></script>
- <script is:inline src="/brighter-analytics.js?v=1.0.2" defer></script>
+ <script is:inline src="/brighter-analytics.js?v=2.0.0" defer></script>
  </body>
 </html>

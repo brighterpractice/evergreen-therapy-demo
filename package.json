@@ -10,7 +10,8 @@
     "build": "astro build && node scripts/quality-check.mjs",
     "preview": "astro preview",
     "astro": "astro",
-    "quality": "npm run build"
+    "quality": "npm run test:analytics && npm run build",
+    "test:analytics": "node --test scripts/analytics-v2-tracker.test.mjs"
   },
   "dependencies": {
     "astro": "^7.2.2"
