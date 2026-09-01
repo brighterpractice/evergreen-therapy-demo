@@ -1,7 +1,48 @@
 ---
 import { externalLinkAttrs } from '../data/site';
-interface Props { href:string; variant?:'solid'|'light'|'outline'; tracking?:string; id?:string; target?:'_blank' }
-const {href,variant='solid',tracking,id,target}=Astro.props;
+
+interface Props {
+  href: string;
+  variant?: 'solid' | 'light' | 'outline';
+  tracking?: string;
+  id?: string;
+  target?: '_blank';
+}
+
+const {
+  href,
+  variant = 'solid',
+  tracking,
+  id,
+  target,
+} = Astro.props;
+
 const linkAttrs = externalLinkAttrs(target);
+
+let analyticsEvent: string | undefined;
+let analyticsContentKey: string | undefined;
+
+if (tracking === 'request-appointment') {
+  analyticsEvent = 'appointment_click';
+} else if (tracking === 'client-portal') {
+  analyticsEvent = 'client_portal_click';
+} else if (tracking === 'outbound') {
+  analyticsEvent = 'outbound_click';
+} else if (tracking?.startsWith('service-')) {
+  analyticsEvent = 'service_click';
+  analyticsContentKey = tracking.slice('service-'.length);
+}
 ---
-<a {href} {id} target={linkAttrs.target} rel={linkAttrs.rel} class:list={['button',variant!=='solid'&&`button--${variant}`,id==='mobile-appointment'&&'mobile-appointment']} data-track={tracking}><slot /></a>
+<a
+  {href}
+  {id}
+  target={linkAttrs.target}
+  rel={linkAttrs.rel}
+  class:list={[
+    'button',
+    variant !== 'solid' && `button--${variant}`,
+    id === 'mobile-appointment' && 'mobile-appointment',
+  ]}
+  data-bs-analytics-event={analyticsEvent}
+  data-bs-content-key={analyticsContentKey}
+><slot /></a>

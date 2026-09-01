@@ -61,7 +61,7 @@ const visibleServices = services.filter((service) => service.published);
  class="service-card service-link card"
  href={service.href}
  aria-label={`Learn more about ${service.title}`}
- data-track={`service-${service.slug}`}
+ data-bs-analytics-event="service_click" data-bs-content-key={service.slug}
  >
  <span class="detail-label">Read more</span>
  <h3>{service.title}</h3>

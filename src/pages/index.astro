@@ -119,7 +119,7 @@ import {
  class="card service-link"
  href={service.href}
  aria-label={`Learn more about ${service.title}`}
- data-track={`service-${service.slug}`}
+ data-bs-analytics-event="service_click" data-bs-content-key={service.slug}
  >
  <h3>{service.title}</h3>
  <p>{service.homeDescription}</p>
@@ -163,7 +163,7 @@ import {
  <a
  class="link-arrow"
  href="/about/maya-bennett/"
- data-track="service-selection"
+
  >
  Learn more about Maya’s approach
  </a>
