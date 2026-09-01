@@ -72,9 +72,6 @@
 
     const deliver = (payload) => {
       const body = JSON.stringify(payload);
-      try {
-        if (typeof navigator.sendBeacon === "function" && navigator.sendBeacon(endpoint, new Blob([body], { type: "application/json" }))) return;
-      } catch {}
       const attempt = (retry) => {
         try {
           fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body, keepalive: true, credentials: "omit", referrerPolicy: "no-referrer" })
