@@ -39,7 +39,8 @@ const analyticsConfig = JSON.stringify({
  <meta name="generator" content={Astro.generator} />
  <title>{pageTitle}</title>
  <meta name="description" content={description} />
- {noindex ? <meta name="robots" content="noindex, nofollow" /> : <link rel="canonical" href={canonical} />}
+ <meta name="robots" content={noindex ? "noindex, nofollow" : "noindex, follow"} />
+ {!noindex && <link rel="canonical" href={canonical} />}
  <meta property="og:type" content="website" />
  <meta property="og:site_name" content={siteName} />
  <meta property="og:title" content={pageTitle} />
